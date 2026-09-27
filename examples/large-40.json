@@ -1,0 +1,289 @@
+{
+  "app": "CPM Analyzer",
+  "version": 1,
+  "name": "Smart Factory Construction (40 activities)",
+  "name_ar": "إنشاء مصنع ذكي (40 نشاطًا)",
+  "unit": "Days",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Feasibility Study",
+      "name_ar": "دراسة الجدوى",
+      "duration": "5",
+      "predecessors": "-"
+    },
+    {
+      "id": "2",
+      "name": "Funding Approval",
+      "name_ar": "اعتماد التمويل",
+      "duration": "4",
+      "predecessors": "1"
+    },
+    {
+      "id": "3",
+      "name": "Regulatory Permits",
+      "name_ar": "التصاريح التنظيمية",
+      "duration": "8",
+      "predecessors": "1"
+    },
+    {
+      "id": "4",
+      "name": "Stakeholder Workshops",
+      "name_ar": "ورش أصحاب المصلحة",
+      "duration": "3",
+      "predecessors": "-"
+    },
+    {
+      "id": "5",
+      "name": "Concept Design",
+      "name_ar": "التصميم المفاهيمي",
+      "duration": "6",
+      "predecessors": "2,4"
+    },
+    {
+      "id": "6",
+      "name": "Geotechnical Survey",
+      "name_ar": "المسح الجيوتقني",
+      "duration": "4",
+      "predecessors": "3"
+    },
+    {
+      "id": "7",
+      "name": "Detailed Architectural Design",
+      "name_ar": "التصميم المعماري التفصيلي",
+      "duration": "10",
+      "predecessors": "5"
+    },
+    {
+      "id": "8",
+      "name": "Structural Design",
+      "name_ar": "التصميم الإنشائي",
+      "duration": "8",
+      "predecessors": "5,6"
+    },
+    {
+      "id": "9",
+      "name": "MEP Design",
+      "name_ar": "تصميم الأنظمة الكهروميكانيكية",
+      "duration": "9",
+      "predecessors": "7"
+    },
+    {
+      "id": "10",
+      "name": "Tender Documents",
+      "name_ar": "وثائق المناقصة",
+      "duration": "4",
+      "predecessors": "8,9"
+    },
+    {
+      "id": "11",
+      "name": "Contractor Tendering",
+      "name_ar": "طرح المناقصة",
+      "duration": "6",
+      "predecessors": "10"
+    },
+    {
+      "id": "12",
+      "name": "Contract Award",
+      "name_ar": "ترسية العقد",
+      "duration": "2",
+      "predecessors": "11"
+    },
+    {
+      "id": "13",
+      "name": "Site Mobilization",
+      "name_ar": "تجهيز الموقع",
+      "duration": "3",
+      "predecessors": "12"
+    },
+    {
+      "id": "14",
+      "name": "Excavation",
+      "name_ar": "أعمال الحفر",
+      "duration": "6",
+      "predecessors": "13"
+    },
+    {
+      "id": "15",
+      "name": "Foundations",
+      "name_ar": "الأساسات",
+      "duration": "10",
+      "predecessors": "14"
+    },
+    {
+      "id": "16",
+      "name": "Structural Frame",
+      "name_ar": "الهيكل الإنشائي",
+      "duration": "15",
+      "predecessors": "15"
+    },
+    {
+      "id": "17",
+      "name": "Roof Structure",
+      "name_ar": "هيكل السقف",
+      "duration": "6",
+      "predecessors": "16"
+    },
+    {
+      "id": "18",
+      "name": "Building Envelope",
+      "name_ar": "الغلاف الخارجي للمبنى",
+      "duration": "10",
+      "predecessors": "17"
+    },
+    {
+      "id": "19",
+      "name": "Long-lead Equipment Order",
+      "name_ar": "طلب المعدات طويلة التوريد",
+      "duration": "5",
+      "predecessors": "12"
+    },
+    {
+      "id": "20",
+      "name": "Equipment Manufacturing",
+      "name_ar": "تصنيع المعدات",
+      "duration": "25",
+      "predecessors": "19"
+    },
+    {
+      "id": "21",
+      "name": "Equipment Delivery",
+      "name_ar": "توريد المعدات",
+      "duration": "3",
+      "predecessors": "20"
+    },
+    {
+      "id": "22",
+      "name": "HVAC Installation",
+      "name_ar": "تركيب أنظمة التكييف",
+      "duration": "12",
+      "predecessors": "18"
+    },
+    {
+      "id": "23",
+      "name": "Electrical Rough-in",
+      "name_ar": "التمديدات الكهربائية الأولية",
+      "duration": "10",
+      "predecessors": "16"
+    },
+    {
+      "id": "24",
+      "name": "Plumbing Rough-in",
+      "name_ar": "التمديدات الصحية الأولية",
+      "duration": "8",
+      "predecessors": "16"
+    },
+    {
+      "id": "25",
+      "name": "Fire Protection",
+      "name_ar": "أنظمة مكافحة الحريق",
+      "duration": "6",
+      "predecessors": "23,24"
+    },
+    {
+      "id": "26",
+      "name": "Interior Partitions",
+      "name_ar": "القواطع الداخلية",
+      "duration": "8",
+      "predecessors": "18,25"
+    },
+    {
+      "id": "27",
+      "name": "Finishes & Flooring",
+      "name_ar": "التشطيبات والأرضيات",
+      "duration": "10",
+      "predecessors": "26"
+    },
+    {
+      "id": "28",
+      "name": "Equipment Installation",
+      "name_ar": "تركيب المعدات",
+      "duration": "8",
+      "predecessors": "21,27"
+    },
+    {
+      "id": "29",
+      "name": "IT Network",
+      "name_ar": "شبكة تقنية المعلومات",
+      "duration": "6",
+      "predecessors": "23"
+    },
+    {
+      "id": "30",
+      "name": "Automation Integration",
+      "name_ar": "تكامل الأتمتة",
+      "duration": "7",
+      "predecessors": "28,29"
+    },
+    {
+      "id": "31",
+      "name": "HVAC Balancing",
+      "name_ar": "موازنة أنظمة التكييف",
+      "duration": "4",
+      "predecessors": "22"
+    },
+    {
+      "id": "32",
+      "name": "Systems Commissioning",
+      "name_ar": "تشغيل الأنظمة واختبارها",
+      "duration": "6",
+      "predecessors": "30,31"
+    },
+    {
+      "id": "33",
+      "name": "Staff Recruitment",
+      "name_ar": "استقطاب الموظفين",
+      "duration": "20",
+      "predecessors": "12"
+    },
+    {
+      "id": "34",
+      "name": "Staff Training",
+      "name_ar": "تدريب الموظفين",
+      "duration": "8",
+      "predecessors": "33,28"
+    },
+    {
+      "id": "35",
+      "name": "Operating Procedures",
+      "name_ar": "إجراءات التشغيل",
+      "duration": "6",
+      "predecessors": "12"
+    },
+    {
+      "id": "36",
+      "name": "Quality System Setup",
+      "name_ar": "إعداد نظام الجودة",
+      "duration": "5",
+      "predecessors": "35"
+    },
+    {
+      "id": "37",
+      "name": "Pilot Operation",
+      "name_ar": "التشغيل التجريبي",
+      "duration": "7",
+      "predecessors": "32,34,36"
+    },
+    {
+      "id": "38",
+      "name": "Performance Tests & Inspection",
+      "name_ar": "اختبارات الأداء والتفتيش",
+      "duration": "6",
+      "predecessors": "37"
+    },
+    {
+      "id": "39",
+      "name": "Official Opening",
+      "name_ar": "الافتتاح الرسمي",
+      "duration": "1",
+      "predecessors": "38"
+    },
+    {
+      "id": "40",
+      "name": "Landscaping & Parking",
+      "name_ar": "تنسيق المواقع والمواقف",
+      "duration": "7",
+      "predecessors": "18"
+    }
+  ]
+}

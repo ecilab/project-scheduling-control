@@ -1,0 +1,6 @@
+Activity No.,Activity Name,Duration,Predecessor
+1,Project Start,2,-
+2,Design,4,1
+3,Procurement,5,1
+4,Assembly,6,"2,3"
+5,Testing,3,4

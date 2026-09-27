@@ -1,0 +1,65 @@
+{
+  "app": "CPM Analyzer",
+  "version": 1,
+  "name": "Validation demo: circular dependency",
+  "name_ar": "عرض التحقق: اعتماد دائري",
+  "unit": "Days",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Site Survey",
+      "name_ar": "مسح الموقع",
+      "duration": "2",
+      "predecessors": "-"
+    },
+    {
+      "id": "2",
+      "name": "Permit Application",
+      "name_ar": "طلب التصاريح",
+      "duration": "3",
+      "predecessors": "1"
+    },
+    {
+      "id": "3",
+      "name": "Layout Design",
+      "name_ar": "تصميم المخطط",
+      "duration": "4",
+      "predecessors": "1,7"
+    },
+    {
+      "id": "4",
+      "name": "Material Order",
+      "name_ar": "طلب المواد",
+      "duration": "2",
+      "predecessors": "2"
+    },
+    {
+      "id": "5",
+      "name": "Assembly",
+      "name_ar": "التجميع",
+      "duration": "5",
+      "predecessors": "3"
+    },
+    {
+      "id": "6",
+      "name": "Inspection",
+      "name_ar": "الفحص",
+      "duration": "2",
+      "predecessors": "4"
+    },
+    {
+      "id": "7",
+      "name": "Rework Review",
+      "name_ar": "مراجعة إعادة العمل",
+      "duration": "3",
+      "predecessors": "5"
+    },
+    {
+      "id": "8",
+      "name": "Handover",
+      "name_ar": "التسليم",
+      "duration": "1",
+      "predecessors": "6,7"
+    }
+  ]
+}

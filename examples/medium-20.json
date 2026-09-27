@@ -1,0 +1,149 @@
+{
+  "app": "CPM Analyzer",
+  "version": 1,
+  "name": "Production Line Installation (20 activities)",
+  "name_ar": "تركيب خط إنتاج (20 نشاطًا)",
+  "unit": "Days",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Project Charter",
+      "name_ar": "ميثاق المشروع",
+      "duration": "2",
+      "predecessors": "-"
+    },
+    {
+      "id": "2",
+      "name": "Site Survey",
+      "name_ar": "مسح الموقع",
+      "duration": "3",
+      "predecessors": "1"
+    },
+    {
+      "id": "3",
+      "name": "Equipment Specification",
+      "name_ar": "مواصفات المعدات",
+      "duration": "4",
+      "predecessors": "1"
+    },
+    {
+      "id": "4",
+      "name": "Layout Design",
+      "name_ar": "تصميم المخطط",
+      "duration": "5",
+      "predecessors": "2"
+    },
+    {
+      "id": "5",
+      "name": "Supplier Selection",
+      "name_ar": "اختيار الموردين",
+      "duration": "4",
+      "predecessors": "3"
+    },
+    {
+      "id": "6",
+      "name": "Civil Works",
+      "name_ar": "الأعمال المدنية",
+      "duration": "8",
+      "predecessors": "4"
+    },
+    {
+      "id": "7",
+      "name": "Equipment Procurement",
+      "name_ar": "شراء المعدات",
+      "duration": "10",
+      "predecessors": "5"
+    },
+    {
+      "id": "8",
+      "name": "Electrical Design",
+      "name_ar": "التصميم الكهربائي",
+      "duration": "4",
+      "predecessors": "4"
+    },
+    {
+      "id": "9",
+      "name": "Electrical Installation",
+      "name_ar": "التمديدات الكهربائية",
+      "duration": "6",
+      "predecessors": "6,8"
+    },
+    {
+      "id": "10",
+      "name": "Utilities (Air & Water)",
+      "name_ar": "المرافق (الهواء والماء)",
+      "duration": "5",
+      "predecessors": "6"
+    },
+    {
+      "id": "11",
+      "name": "Machine Delivery",
+      "name_ar": "توريد الآلات",
+      "duration": "3",
+      "predecessors": "7"
+    },
+    {
+      "id": "12",
+      "name": "Machine Installation",
+      "name_ar": "تركيب الآلات",
+      "duration": "7",
+      "predecessors": "9,11"
+    },
+    {
+      "id": "13",
+      "name": "Utilities Hook-up",
+      "name_ar": "توصيل المرافق",
+      "duration": "3",
+      "predecessors": "10,12"
+    },
+    {
+      "id": "14",
+      "name": "PLC Programming",
+      "name_ar": "برمجة PLC",
+      "duration": "6",
+      "predecessors": "8"
+    },
+    {
+      "id": "15",
+      "name": "Safety Systems",
+      "name_ar": "أنظمة السلامة",
+      "duration": "4",
+      "predecessors": "9"
+    },
+    {
+      "id": "16",
+      "name": "Operator Training",
+      "name_ar": "تدريب المشغلين",
+      "duration": "5",
+      "predecessors": "14"
+    },
+    {
+      "id": "17",
+      "name": "Dry Run Testing",
+      "name_ar": "الاختبار التشغيلي دون إنتاج",
+      "duration": "4",
+      "predecessors": "13,14"
+    },
+    {
+      "id": "18",
+      "name": "Safety Certification",
+      "name_ar": "شهادة السلامة",
+      "duration": "2",
+      "predecessors": "15,17"
+    },
+    {
+      "id": "19",
+      "name": "Trial Production",
+      "name_ar": "الإنتاج التجريبي",
+      "duration": "5",
+      "predecessors": "16,17"
+    },
+    {
+      "id": "20",
+      "name": "Handover & Launch",
+      "name_ar": "التسليم والإطلاق",
+      "duration": "2",
+      "predecessors": "18,19"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "app": "CPM Analyzer",
+  "version": 1,
+  "name": "Smart Sensor Launch (two critical paths)",
+  "name_ar": "إطلاق حساس ذكي (مساران حرجان)",
+  "unit": "Weeks",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Budget Approval",
+      "name_ar": "اعتماد الميزانية",
+      "duration": "2",
+      "predecessors": "-"
+    },
+    {
+      "id": "2",
+      "name": "Project Kickoff",
+      "name_ar": "انطلاق المشروع",
+      "duration": "2",
+      "predecessors": "-"
+    },
+    {
+      "id": "3",
+      "name": "Hardware Design",
+      "name_ar": "تصميم العتاد",
+      "duration": "5",
+      "predecessors": "2"
+    },
+    {
+      "id": "4",
+      "name": "Firmware Design",
+      "name_ar": "تصميم البرنامج الثابت",
+      "duration": "5",
+      "predecessors": "2"
+    },
+    {
+      "id": "5",
+      "name": "PCB Fabrication",
+      "name_ar": "تصنيع اللوحة المطبوعة",
+      "duration": "4",
+      "predecessors": "3"
+    },
+    {
+      "id": "6",
+      "name": "Firmware Coding",
+      "name_ar": "برمجة البرنامج الثابت",
+      "duration": "4",
+      "predecessors": "4"
+    },
+    {
+      "id": "7",
+      "name": "System Integration",
+      "name_ar": "تكامل النظام",
+      "duration": "3",
+      "predecessors": "5,6"
+    },
+    {
+      "id": "8",
+      "name": "User Manual Drafting",
+      "name_ar": "صياغة دليل المستخدم",
+      "duration": "3",
+      "predecessors": "1,2"
+    },
+    {
+      "id": "9",
+      "name": "Training Material",
+      "name_ar": "إعداد المواد التدريبية",
+      "duration": "2",
+      "predecessors": "8"
+    },
+    {
+      "id": "10",
+      "name": "Pilot Launch",
+      "name_ar": "الإطلاق التجريبي",
+      "duration": "1",
+      "predecessors": "7"
+    },
+    {
+      "id": "11",
+      "name": "Sales Training",
+      "name_ar": "تدريب فريق المبيعات",
+      "duration": "2",
+      "predecessors": "9"
+    }
+  ]
+}

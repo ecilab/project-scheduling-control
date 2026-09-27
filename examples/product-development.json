@@ -1,0 +1,79 @@
+{
+  "app": "CPM Analyzer",
+  "version": 1,
+  "name": "New Product Development",
+  "name_ar": "تطوير منتج جديد",
+  "unit": "Days",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Project Definition",
+      "name_ar": "تعريف المشروع",
+      "duration": "2",
+      "predecessors": "-"
+    },
+    {
+      "id": "2",
+      "name": "Requirements Analysis",
+      "name_ar": "تحليل المتطلبات",
+      "duration": "4",
+      "predecessors": "1"
+    },
+    {
+      "id": "3",
+      "name": "Concept Development",
+      "name_ar": "تطوير المفهوم",
+      "duration": "5",
+      "predecessors": "1"
+    },
+    {
+      "id": "4",
+      "name": "Detailed Design",
+      "name_ar": "التصميم التفصيلي",
+      "duration": "6",
+      "predecessors": "2"
+    },
+    {
+      "id": "5",
+      "name": "Prototype Development",
+      "name_ar": "تطوير النموذج الأولي",
+      "duration": "7",
+      "predecessors": "3"
+    },
+    {
+      "id": "6",
+      "name": "Supplier Preparation",
+      "name_ar": "تجهيز الموردين",
+      "duration": "4",
+      "predecessors": "2"
+    },
+    {
+      "id": "7",
+      "name": "Prototype Testing",
+      "name_ar": "اختبار النموذج الأولي",
+      "duration": "5",
+      "predecessors": "4,5"
+    },
+    {
+      "id": "8",
+      "name": "Production Planning",
+      "name_ar": "تخطيط الإنتاج",
+      "duration": "3",
+      "predecessors": "6"
+    },
+    {
+      "id": "9",
+      "name": "Final Validation",
+      "name_ar": "التحقق النهائي",
+      "duration": "4",
+      "predecessors": "7,8"
+    },
+    {
+      "id": "10",
+      "name": "Project Launch",
+      "name_ar": "إطلاق المشروع",
+      "duration": "2",
+      "predecessors": "9"
+    }
+  ]
+}
