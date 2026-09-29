@@ -79,6 +79,6 @@ If you turn on the optional AI assistant and enter your own API key, the project
 
 ## How to cite
 
-> Al-Ahmari, A. (2026). *Project Scheduling & Control* (Version 1.1.0) [Computer software]. ECI Lab. https://github.com/ecilab/cpm-analyzer
+> Al-Ahmari, A. (2026). *Project Scheduling & Control* (Version 1.1.0) [Computer software]. ECI Lab. https://github.com/ecilab/project-scheduling-control
 
 GitHub also shows a **Cite this repository** button generated from [`CITATION.cff`](CITATION.cff).
