@@ -1,86 +1,654 @@
 {
   "app": "CPM Analyzer",
-  "version": 1,
+  "version": 2,
   "name": "Smart Sensor Launch (two critical paths)",
   "name_ar": "إطلاق حساس ذكي (مساران حرجان)",
   "unit": "Weeks",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": true
+  },
+  "cal": {
+    "start": "",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "3400",
+  "resName": "Staff",
+  "resLimit": "11",
+  "target": "17",
+  "prob": "",
+  "status": "6",
   "activities": [
     {
       "id": "1",
       "name": "Budget Approval",
       "name_ar": "اعتماد الميزانية",
       "duration": "2",
-      "predecessors": "-"
+      "predecessors": "-",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "8000",
+      "crashCost": "10000",
+      "resource": "3",
+      "percentComplete": "80",
+      "actualCost": "6910"
     },
     {
       "id": "2",
       "name": "Project Kickoff",
       "name_ar": "انطلاق المشروع",
       "duration": "2",
-      "predecessors": "-"
+      "predecessors": "-",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "12000",
+      "crashCost": "15250",
+      "resource": "4",
+      "percentComplete": "100",
+      "actualCost": "11640"
     },
     {
       "id": "3",
       "name": "Hardware Design",
       "name_ar": "تصميم العتاد",
       "duration": "5",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "3",
+      "mostLikely": "5",
+      "pessimistic": "7",
+      "crashDuration": "4",
+      "normalCost": "37500",
+      "crashCost": "39000",
+      "resource": "5",
+      "percentComplete": "70",
+      "actualCost": "29400"
     },
     {
       "id": "4",
       "name": "Firmware Design",
       "name_ar": "تصميم البرنامج الثابت",
       "duration": "5",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "crashDuration": "4",
+      "normalCost": "25000",
+      "crashCost": "29500",
+      "resource": "6",
+      "percentComplete": "90",
+      "actualCost": "23180"
     },
     {
       "id": "5",
       "name": "PCB Fabrication",
       "name_ar": "تصنيع اللوحة المطبوعة",
       "duration": "4",
-      "predecessors": "3"
+      "predecessors": "3",
+      "optimistic": "3",
+      "mostLikely": "3",
+      "pessimistic": "9",
+      "normalCost": "40000",
+      "resource": "5"
     },
     {
       "id": "6",
       "name": "Firmware Coding",
       "name_ar": "برمجة البرنامج الثابت",
       "duration": "4",
-      "predecessors": "4"
+      "predecessors": "4",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "18000",
+      "crashCost": "21750",
+      "resource": "3"
     },
     {
       "id": "7",
       "name": "System Integration",
       "name_ar": "تكامل النظام",
       "duration": "3",
-      "predecessors": "5,6"
+      "predecessors": "5,6",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "12000",
+      "crashCost": "13750",
+      "resource": "4"
     },
     {
       "id": "8",
       "name": "User Manual Drafting",
       "name_ar": "صياغة دليل المستخدم",
       "duration": "3",
-      "predecessors": "1,2"
+      "predecessors": "1,2",
+      "optimistic": "2",
+      "mostLikely": "2",
+      "pessimistic": "8",
+      "crashDuration": "2",
+      "normalCost": "18000",
+      "crashCost": "24000",
+      "resource": "2",
+      "percentComplete": "80",
+      "actualCost": "14830"
     },
     {
       "id": "9",
       "name": "Training Material",
       "name_ar": "إعداد المواد التدريبية",
       "duration": "2",
-      "predecessors": "8"
+      "predecessors": "8",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "15000",
+      "crashCost": "17000",
+      "resource": "1",
+      "percentComplete": "50",
+      "actualCost": "8100"
     },
     {
       "id": "10",
       "name": "Pilot Launch",
       "name_ar": "الإطلاق التجريبي",
       "duration": "1",
-      "predecessors": "7"
+      "predecessors": "7",
+      "optimistic": "0.5",
+      "mostLikely": "1",
+      "pessimistic": "1.5",
+      "normalCost": "5000",
+      "resource": "2"
     },
     {
       "id": "11",
       "name": "Sales Training",
       "name_ar": "تدريب فريق المبيعات",
       "duration": "2",
-      "predecessors": "9"
+      "predecessors": "9",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "20000",
+      "crashCost": "21500",
+      "resource": "3"
+    }
+  ],
+  "baseline": {
+    "saved": "2026-09-27T18:31:28.919Z",
+    "T": 15,
+    "basis": "cost",
+    "acts": {
+      "1": {
+        "name": "Budget Approval",
+        "ES": 0,
+        "EF": 2,
+        "dur": 2,
+        "bac": 8000
+      },
+      "2": {
+        "name": "Project Kickoff",
+        "ES": 0,
+        "EF": 2,
+        "dur": 2,
+        "bac": 12000
+      },
+      "3": {
+        "name": "Hardware Design",
+        "ES": 2,
+        "EF": 7,
+        "dur": 5,
+        "bac": 37500
+      },
+      "4": {
+        "name": "Firmware Design",
+        "ES": 2,
+        "EF": 7,
+        "dur": 5,
+        "bac": 25000
+      },
+      "5": {
+        "name": "PCB Fabrication",
+        "ES": 7,
+        "EF": 11,
+        "dur": 4,
+        "bac": 40000
+      },
+      "6": {
+        "name": "Firmware Coding",
+        "ES": 7,
+        "EF": 11,
+        "dur": 4,
+        "bac": 18000
+      },
+      "7": {
+        "name": "System Integration",
+        "ES": 11,
+        "EF": 14,
+        "dur": 3,
+        "bac": 12000
+      },
+      "8": {
+        "name": "User Manual Drafting",
+        "ES": 2,
+        "EF": 5,
+        "dur": 3,
+        "bac": 18000
+      },
+      "9": {
+        "name": "Training Material",
+        "ES": 5,
+        "EF": 7,
+        "dur": 2,
+        "bac": 15000
+      },
+      "10": {
+        "name": "Pilot Launch",
+        "ES": 14,
+        "EF": 15,
+        "dur": 1,
+        "bac": 5000
+      },
+      "11": {
+        "name": "Sales Training",
+        "ES": 7,
+        "EF": 9,
+        "dur": 2,
+        "bac": 20000
+      }
+    }
+  },
+  "log": [
+    {
+      "t": 2,
+      "pv": 20000,
+      "ev": 19549.73822,
+      "ac": 19903.110477
+    },
+    {
+      "t": 4,
+      "pv": 57000,
+      "ev": 54433.507853,
+      "ac": 56437.563367
+    },
+    {
+      "t": 6,
+      "pv": 95500,
+      "ev": 89050,
+      "ac": 94060
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-base",
+      "name": "Base case (normal durations)",
+      "saved": "2026-09-27T18:31:28.919Z",
+      "data": {
+        "name": "Smart Sensor Launch (two critical paths)",
+        "unit": "Weeks",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "3400",
+        "resName": "Staff",
+        "resLimit": "11",
+        "target": "17",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Budget Approval",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "8000",
+            "crashCost": "10000",
+            "resource": "3",
+            "percentComplete": "80",
+            "actualCost": "6910"
+          },
+          {
+            "id": "2",
+            "name": "Project Kickoff",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "12000",
+            "crashCost": "15250",
+            "resource": "4",
+            "percentComplete": "100",
+            "actualCost": "11640"
+          },
+          {
+            "id": "3",
+            "name": "Hardware Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "3",
+            "mostLikely": "5",
+            "pessimistic": "7",
+            "crashDuration": "4",
+            "normalCost": "37500",
+            "crashCost": "39000",
+            "resource": "5",
+            "percentComplete": "70",
+            "actualCost": "29400"
+          },
+          {
+            "id": "4",
+            "name": "Firmware Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "25000",
+            "crashCost": "29500",
+            "resource": "6",
+            "percentComplete": "90",
+            "actualCost": "23180"
+          },
+          {
+            "id": "5",
+            "name": "PCB Fabrication",
+            "duration": "4",
+            "predecessors": "3",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "normalCost": "40000",
+            "resource": "5"
+          },
+          {
+            "id": "6",
+            "name": "Firmware Coding",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "18000",
+            "crashCost": "21750",
+            "resource": "3"
+          },
+          {
+            "id": "7",
+            "name": "System Integration",
+            "duration": "3",
+            "predecessors": "5,6",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "12000",
+            "crashCost": "13750",
+            "resource": "4"
+          },
+          {
+            "id": "8",
+            "name": "User Manual Drafting",
+            "duration": "3",
+            "predecessors": "1,2",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "18000",
+            "crashCost": "24000",
+            "resource": "2",
+            "percentComplete": "80",
+            "actualCost": "14830"
+          },
+          {
+            "id": "9",
+            "name": "Training Material",
+            "duration": "2",
+            "predecessors": "8",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "15000",
+            "crashCost": "17000",
+            "resource": "1",
+            "percentComplete": "50",
+            "actualCost": "8100"
+          },
+          {
+            "id": "10",
+            "name": "Pilot Launch",
+            "duration": "1",
+            "predecessors": "7",
+            "optimistic": "0.5",
+            "mostLikely": "1",
+            "pessimistic": "1.5",
+            "normalCost": "5000",
+            "resource": "2"
+          },
+          {
+            "id": "11",
+            "name": "Sales Training",
+            "duration": "2",
+            "predecessors": "9",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "20000",
+            "crashCost": "21500",
+            "resource": "3"
+          }
+        ]
+      },
+      "meta": null
+    },
+    {
+      "id": "s-crash",
+      "name": "Crashed to the optimum (13)",
+      "saved": "2026-09-27T18:31:28.920Z",
+      "data": {
+        "name": "Smart Sensor Launch (two critical paths)",
+        "unit": "Weeks",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "3400",
+        "resName": "Staff",
+        "resLimit": "11",
+        "target": "17",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Budget Approval",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "8000",
+            "crashCost": "10000",
+            "resource": "3",
+            "percentComplete": "80",
+            "actualCost": "6910"
+          },
+          {
+            "id": "2",
+            "name": "Project Kickoff",
+            "duration": "1",
+            "predecessors": "-",
+            "optimistic": "0.75",
+            "mostLikely": "1",
+            "pessimistic": "1.25",
+            "crashDuration": "1",
+            "normalCost": "12000",
+            "crashCost": "15250",
+            "resource": "4",
+            "percentComplete": "100",
+            "actualCost": "11640"
+          },
+          {
+            "id": "3",
+            "name": "Hardware Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "3",
+            "mostLikely": "5",
+            "pessimistic": "7",
+            "crashDuration": "4",
+            "normalCost": "37500",
+            "crashCost": "39000",
+            "resource": "5",
+            "percentComplete": "70",
+            "actualCost": "29400"
+          },
+          {
+            "id": "4",
+            "name": "Firmware Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "25000",
+            "crashCost": "29500",
+            "resource": "6",
+            "percentComplete": "90",
+            "actualCost": "23180"
+          },
+          {
+            "id": "5",
+            "name": "PCB Fabrication",
+            "duration": "4",
+            "predecessors": "3",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "normalCost": "40000",
+            "resource": "5"
+          },
+          {
+            "id": "6",
+            "name": "Firmware Coding",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "18000",
+            "crashCost": "21750",
+            "resource": "3"
+          },
+          {
+            "id": "7",
+            "name": "System Integration",
+            "duration": "2",
+            "predecessors": "5,6",
+            "optimistic": "1.333333",
+            "mostLikely": "2",
+            "pessimistic": "2.666667",
+            "crashDuration": "2",
+            "normalCost": "12000",
+            "crashCost": "13750",
+            "resource": "4"
+          },
+          {
+            "id": "8",
+            "name": "User Manual Drafting",
+            "duration": "3",
+            "predecessors": "1,2",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "18000",
+            "crashCost": "24000",
+            "resource": "2",
+            "percentComplete": "80",
+            "actualCost": "14830"
+          },
+          {
+            "id": "9",
+            "name": "Training Material",
+            "duration": "2",
+            "predecessors": "8",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "15000",
+            "crashCost": "17000",
+            "resource": "1",
+            "percentComplete": "50",
+            "actualCost": "8100"
+          },
+          {
+            "id": "10",
+            "name": "Pilot Launch",
+            "duration": "1",
+            "predecessors": "7",
+            "optimistic": "0.5",
+            "mostLikely": "1",
+            "pessimistic": "1.5",
+            "normalCost": "5000",
+            "resource": "2"
+          },
+          {
+            "id": "11",
+            "name": "Sales Training",
+            "duration": "2",
+            "predecessors": "9",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "20000",
+            "crashCost": "21500",
+            "resource": "3"
+          }
+        ]
+      },
+      "meta": {
+        "directCost": 215500
+      }
     }
   ]
 }

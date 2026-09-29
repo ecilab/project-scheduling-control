@@ -1,79 +1,607 @@
 {
   "app": "CPM Analyzer",
-  "version": 1,
+  "version": 2,
   "name": "New Product Development",
   "name_ar": "تطوير منتج جديد",
   "unit": "Days",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": true
+  },
+  "cal": {
+    "start": "2026-10-04",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "350",
+  "resName": "Engineers",
+  "resLimit": "7",
+  "target": "28",
+  "prob": "",
+  "status": "10",
   "activities": [
     {
       "id": "1",
       "name": "Project Definition",
       "name_ar": "تعريف المشروع",
       "duration": "2",
-      "predecessors": "-"
+      "predecessors": "-",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "1600",
+      "crashCost": "2000",
+      "resource": "5",
+      "percentComplete": "80",
+      "actualCost": "1380"
     },
     {
       "id": "2",
       "name": "Requirements Analysis",
       "name_ar": "تحليل المتطلبات",
       "duration": "4",
-      "predecessors": "1"
+      "predecessors": "1",
+      "optimistic": "3",
+      "mostLikely": "3",
+      "pessimistic": "9",
+      "crashDuration": "3",
+      "normalCost": "4800",
+      "crashCost": "5450",
+      "resource": "3",
+      "percentComplete": "100",
+      "actualCost": "4660"
     },
     {
       "id": "3",
       "name": "Concept Development",
       "name_ar": "تطوير المفهوم",
       "duration": "5",
-      "predecessors": "1"
+      "predecessors": "1",
+      "optimistic": "3",
+      "mostLikely": "5",
+      "pessimistic": "7",
+      "crashDuration": "4",
+      "normalCost": "7500",
+      "crashCost": "7800",
+      "resource": "4",
+      "percentComplete": "90",
+      "actualCost": "7560"
     },
     {
       "id": "4",
       "name": "Detailed Design",
       "name_ar": "التصميم التفصيلي",
       "duration": "6",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "4",
+      "mostLikely": "6",
+      "pessimistic": "8",
+      "crashDuration": "5",
+      "normalCost": "6000",
+      "crashCost": "6900",
+      "resource": "2",
+      "percentComplete": "75",
+      "actualCost": "4640"
     },
     {
       "id": "5",
       "name": "Prototype Development",
       "name_ar": "تطوير النموذج الأولي",
       "duration": "7",
-      "predecessors": "3"
+      "predecessors": "3",
+      "optimistic": "5",
+      "mostLikely": "5",
+      "pessimistic": "17",
+      "normalCost": "14000",
+      "resource": "1",
+      "percentComplete": "30",
+      "actualCost": "4540"
     },
     {
       "id": "6",
       "name": "Supplier Preparation",
       "name_ar": "تجهيز الموردين",
       "duration": "4",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "3600",
+      "crashCost": "4350",
+      "resource": "2",
+      "percentComplete": "100",
+      "actualCost": "3490"
     },
     {
       "id": "7",
       "name": "Prototype Testing",
       "name_ar": "اختبار النموذج الأولي",
       "duration": "5",
-      "predecessors": "4,5"
+      "predecessors": "4,5",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "crashDuration": "4",
+      "normalCost": "4000",
+      "crashCost": "4350",
+      "resource": "3"
     },
     {
       "id": "8",
       "name": "Production Planning",
       "name_ar": "تخطيط الإنتاج",
       "duration": "3",
-      "predecessors": "6"
+      "predecessors": "6",
+      "optimistic": "2",
+      "mostLikely": "2",
+      "pessimistic": "8",
+      "crashDuration": "2",
+      "normalCost": "3600",
+      "crashCost": "4800",
+      "resource": "4"
     },
     {
       "id": "9",
       "name": "Final Validation",
       "name_ar": "التحقق النهائي",
       "duration": "4",
-      "predecessors": "7,8"
+      "predecessors": "7,8",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "6000",
+      "crashCost": "6400",
+      "resource": "5"
     },
     {
       "id": "10",
       "name": "Project Launch",
       "name_ar": "إطلاق المشروع",
       "duration": "2",
-      "predecessors": "9"
+      "predecessors": "9",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "normalCost": "2000",
+      "resource": "6"
+    }
+  ],
+  "baseline": {
+    "saved": "2026-09-27T18:31:28.804Z",
+    "T": 25,
+    "basis": "cost",
+    "acts": {
+      "1": {
+        "name": "Project Definition",
+        "ES": 0,
+        "EF": 2,
+        "dur": 2,
+        "bac": 1600
+      },
+      "2": {
+        "name": "Requirements Analysis",
+        "ES": 2,
+        "EF": 6,
+        "dur": 4,
+        "bac": 4800
+      },
+      "3": {
+        "name": "Concept Development",
+        "ES": 2,
+        "EF": 7,
+        "dur": 5,
+        "bac": 7500
+      },
+      "4": {
+        "name": "Detailed Design",
+        "ES": 6,
+        "EF": 12,
+        "dur": 6,
+        "bac": 6000
+      },
+      "5": {
+        "name": "Prototype Development",
+        "ES": 7,
+        "EF": 14,
+        "dur": 7,
+        "bac": 14000
+      },
+      "6": {
+        "name": "Supplier Preparation",
+        "ES": 6,
+        "EF": 10,
+        "dur": 4,
+        "bac": 3600
+      },
+      "7": {
+        "name": "Prototype Testing",
+        "ES": 14,
+        "EF": 19,
+        "dur": 5,
+        "bac": 4000
+      },
+      "8": {
+        "name": "Production Planning",
+        "ES": 10,
+        "EF": 13,
+        "dur": 3,
+        "bac": 3600
+      },
+      "9": {
+        "name": "Final Validation",
+        "ES": 19,
+        "EF": 23,
+        "dur": 4,
+        "bac": 6000
+      },
+      "10": {
+        "name": "Project Launch",
+        "ES": 23,
+        "EF": 25,
+        "dur": 2,
+        "bac": 2000
+      }
+    }
+  },
+  "log": [
+    {
+      "t": 3,
+      "pv": 4300,
+      "ev": 4176.472727,
+      "ac": 4237.772829
+    },
+    {
+      "t": 7,
+      "pv": 15800,
+      "ev": 14892.218182,
+      "ac": 15335.890695
+    },
+    {
+      "t": 10,
+      "pv": 27500,
+      "ev": 25130,
+      "ac": 26270
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-base",
+      "name": "Base case (normal durations)",
+      "saved": "2026-09-27T18:31:28.804Z",
+      "data": {
+        "name": "New Product Development",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "350",
+        "resName": "Engineers",
+        "resLimit": "7",
+        "target": "28",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Project Definition",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "1600",
+            "crashCost": "2000",
+            "resource": "5",
+            "percentComplete": "80",
+            "actualCost": "1380"
+          },
+          {
+            "id": "2",
+            "name": "Requirements Analysis",
+            "duration": "4",
+            "predecessors": "1",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "crashDuration": "3",
+            "normalCost": "4800",
+            "crashCost": "5450",
+            "resource": "3",
+            "percentComplete": "100",
+            "actualCost": "4660"
+          },
+          {
+            "id": "3",
+            "name": "Concept Development",
+            "duration": "5",
+            "predecessors": "1",
+            "optimistic": "3",
+            "mostLikely": "5",
+            "pessimistic": "7",
+            "crashDuration": "4",
+            "normalCost": "7500",
+            "crashCost": "7800",
+            "resource": "4",
+            "percentComplete": "90",
+            "actualCost": "7560"
+          },
+          {
+            "id": "4",
+            "name": "Detailed Design",
+            "duration": "6",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "5",
+            "normalCost": "6000",
+            "crashCost": "6900",
+            "resource": "2",
+            "percentComplete": "75",
+            "actualCost": "4640"
+          },
+          {
+            "id": "5",
+            "name": "Prototype Development",
+            "duration": "7",
+            "predecessors": "3",
+            "optimistic": "5",
+            "mostLikely": "5",
+            "pessimistic": "17",
+            "normalCost": "14000",
+            "resource": "1",
+            "percentComplete": "30",
+            "actualCost": "4540"
+          },
+          {
+            "id": "6",
+            "name": "Supplier Preparation",
+            "duration": "4",
+            "predecessors": "2",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "3600",
+            "crashCost": "4350",
+            "resource": "2",
+            "percentComplete": "100",
+            "actualCost": "3490"
+          },
+          {
+            "id": "7",
+            "name": "Prototype Testing",
+            "duration": "5",
+            "predecessors": "4,5",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "4000",
+            "crashCost": "4350",
+            "resource": "3"
+          },
+          {
+            "id": "8",
+            "name": "Production Planning",
+            "duration": "3",
+            "predecessors": "6",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "3600",
+            "crashCost": "4800",
+            "resource": "4"
+          },
+          {
+            "id": "9",
+            "name": "Final Validation",
+            "duration": "4",
+            "predecessors": "7,8",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "6400",
+            "resource": "5"
+          },
+          {
+            "id": "10",
+            "name": "Project Launch",
+            "duration": "2",
+            "predecessors": "9",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "2000",
+            "resource": "6"
+          }
+        ]
+      },
+      "meta": null
+    },
+    {
+      "id": "s-crash",
+      "name": "Crashed to the optimum (24)",
+      "saved": "2026-09-27T18:31:28.805Z",
+      "data": {
+        "name": "New Product Development",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "350",
+        "resName": "Engineers",
+        "resLimit": "7",
+        "target": "28",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Project Definition",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "1600",
+            "crashCost": "2000",
+            "resource": "5",
+            "percentComplete": "80",
+            "actualCost": "1380"
+          },
+          {
+            "id": "2",
+            "name": "Requirements Analysis",
+            "duration": "4",
+            "predecessors": "1",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "crashDuration": "3",
+            "normalCost": "4800",
+            "crashCost": "5450",
+            "resource": "3",
+            "percentComplete": "100",
+            "actualCost": "4660"
+          },
+          {
+            "id": "3",
+            "name": "Concept Development",
+            "duration": "4",
+            "predecessors": "1",
+            "optimistic": "2.4",
+            "mostLikely": "4",
+            "pessimistic": "5.6",
+            "crashDuration": "4",
+            "normalCost": "7500",
+            "crashCost": "7800",
+            "resource": "4",
+            "percentComplete": "90",
+            "actualCost": "7560"
+          },
+          {
+            "id": "4",
+            "name": "Detailed Design",
+            "duration": "6",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "5",
+            "normalCost": "6000",
+            "crashCost": "6900",
+            "resource": "2",
+            "percentComplete": "75",
+            "actualCost": "4640"
+          },
+          {
+            "id": "5",
+            "name": "Prototype Development",
+            "duration": "7",
+            "predecessors": "3",
+            "optimistic": "5",
+            "mostLikely": "5",
+            "pessimistic": "17",
+            "normalCost": "14000",
+            "resource": "1",
+            "percentComplete": "30",
+            "actualCost": "4540"
+          },
+          {
+            "id": "6",
+            "name": "Supplier Preparation",
+            "duration": "4",
+            "predecessors": "2",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "3600",
+            "crashCost": "4350",
+            "resource": "2",
+            "percentComplete": "100",
+            "actualCost": "3490"
+          },
+          {
+            "id": "7",
+            "name": "Prototype Testing",
+            "duration": "5",
+            "predecessors": "4,5",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "4000",
+            "crashCost": "4350",
+            "resource": "3"
+          },
+          {
+            "id": "8",
+            "name": "Production Planning",
+            "duration": "3",
+            "predecessors": "6",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "3600",
+            "crashCost": "4800",
+            "resource": "4"
+          },
+          {
+            "id": "9",
+            "name": "Final Validation",
+            "duration": "4",
+            "predecessors": "7,8",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "6400",
+            "resource": "5"
+          },
+          {
+            "id": "10",
+            "name": "Project Launch",
+            "duration": "2",
+            "predecessors": "9",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "2000",
+            "resource": "6"
+          }
+        ]
+      },
+      "meta": {
+        "directCost": 53400
+      }
     }
   ]
 }

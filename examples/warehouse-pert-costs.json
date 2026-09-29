@@ -1,0 +1,554 @@
+{
+  "app": "CPM Analyzer",
+  "version": 2,
+  "name": "Warehouse Expansion (PERT, costs, resources)",
+  "name_ar": "توسعة مستودع (PERT والتكاليف والموارد)",
+  "unit": "Days",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": true
+  },
+  "cal": {
+    "start": "2026-10-04",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "1200",
+  "resName": "Workers",
+  "resLimit": "8",
+  "target": "31",
+  "prob": "",
+  "status": "12",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Site Preparation",
+      "name_ar": "تجهيز الموقع",
+      "duration": "3",
+      "predecessors": "-",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "3000",
+      "crashCost": "4000",
+      "resource": "4",
+      "percentComplete": "80",
+      "actualCost": "2590"
+    },
+    {
+      "id": "2",
+      "name": "Foundation",
+      "name_ar": "الأساسات",
+      "duration": "6",
+      "predecessors": "1",
+      "optimistic": "4",
+      "mostLikely": "6",
+      "pessimistic": "8",
+      "crashDuration": "4",
+      "normalCost": "8000",
+      "crashCost": "11000",
+      "resource": "6",
+      "percentComplete": "100",
+      "actualCost": "7760"
+    },
+    {
+      "id": "3",
+      "name": "Order Structural Steel",
+      "name_ar": "طلب الحديد الإنشائي",
+      "duration": "6",
+      "predecessors": "1",
+      "optimistic": "3",
+      "mostLikely": "5",
+      "pessimistic": "13",
+      "normalCost": "2000",
+      "resource": "1",
+      "percentComplete": "90",
+      "actualCost": "2020"
+    },
+    {
+      "id": "4",
+      "name": "Erect Frame",
+      "name_ar": "تركيب الهيكل",
+      "duration": "7",
+      "predecessors": "2,3",
+      "optimistic": "5",
+      "mostLikely": "7",
+      "pessimistic": "9",
+      "crashDuration": "5",
+      "normalCost": "12000",
+      "crashCost": "15000",
+      "resource": "7",
+      "percentComplete": "45",
+      "actualCost": "5560"
+    },
+    {
+      "id": "5",
+      "name": "Roofing",
+      "name_ar": "أعمال السقف",
+      "duration": "4",
+      "predecessors": "4",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "5000",
+      "crashCost": "5800",
+      "resource": "3"
+    },
+    {
+      "id": "6",
+      "name": "Electrical Works",
+      "name_ar": "الأعمال الكهربائية",
+      "duration": "5",
+      "predecessors": "4",
+      "optimistic": "3",
+      "mostLikely": "4",
+      "pessimistic": "11",
+      "crashDuration": "3",
+      "normalCost": "6000",
+      "crashCost": "8000",
+      "resource": "2"
+    },
+    {
+      "id": "7",
+      "name": "Plumbing",
+      "name_ar": "الأعمال الصحية",
+      "duration": "3",
+      "predecessors": "2",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "4000",
+      "crashCost": "4600",
+      "resource": "2",
+      "percentComplete": "85",
+      "actualCost": "3810"
+    },
+    {
+      "id": "8",
+      "name": "Interior Finishing",
+      "name_ar": "التشطيبات الداخلية",
+      "duration": "6",
+      "predecessors": "5,6,7",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "12",
+      "crashDuration": "4",
+      "normalCost": "7000",
+      "crashCost": "9400",
+      "resource": "6"
+    },
+    {
+      "id": "9",
+      "name": "Final Inspection",
+      "name_ar": "الفحص النهائي",
+      "duration": "2",
+      "predecessors": "8",
+      "optimistic": "1",
+      "mostLikely": "2",
+      "pessimistic": "3",
+      "normalCost": "1000",
+      "resource": "2"
+    }
+  ],
+  "baseline": {
+    "saved": "2026-09-27T18:31:29.271Z",
+    "T": 29,
+    "basis": "cost",
+    "acts": {
+      "1": {
+        "name": "Site Preparation",
+        "ES": 0,
+        "EF": 3,
+        "dur": 3,
+        "bac": 3000
+      },
+      "2": {
+        "name": "Foundation",
+        "ES": 3,
+        "EF": 9,
+        "dur": 6,
+        "bac": 8000
+      },
+      "3": {
+        "name": "Order Structural Steel",
+        "ES": 3,
+        "EF": 9,
+        "dur": 6,
+        "bac": 2000
+      },
+      "4": {
+        "name": "Erect Frame",
+        "ES": 9,
+        "EF": 16,
+        "dur": 7,
+        "bac": 12000
+      },
+      "5": {
+        "name": "Roofing",
+        "ES": 16,
+        "EF": 20,
+        "dur": 4,
+        "bac": 5000
+      },
+      "6": {
+        "name": "Electrical Works",
+        "ES": 16,
+        "EF": 21,
+        "dur": 5,
+        "bac": 6000
+      },
+      "7": {
+        "name": "Plumbing",
+        "ES": 9,
+        "EF": 12,
+        "dur": 3,
+        "bac": 4000
+      },
+      "8": {
+        "name": "Interior Finishing",
+        "ES": 21,
+        "EF": 27,
+        "dur": 6,
+        "bac": 7000
+      },
+      "9": {
+        "name": "Final Inspection",
+        "ES": 27,
+        "EF": 29,
+        "dur": 2,
+        "bac": 1000
+      }
+    }
+  },
+  "log": [
+    {
+      "t": 4,
+      "pv": 4666.666667,
+      "ev": 4586.379928,
+      "ac": 4639.015182
+    },
+    {
+      "t": 8,
+      "pv": 11333.333333,
+      "ev": 10943.369176,
+      "ac": 11197.46686
+    },
+    {
+      "t": 12,
+      "pv": 22142.857143,
+      "ev": 21000,
+      "ac": 21740
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-base",
+      "name": "Base case (normal durations)",
+      "saved": "2026-09-27T18:31:29.271Z",
+      "data": {
+        "name": "Warehouse Expansion (PERT, costs, resources)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "1200",
+        "resName": "Workers",
+        "resLimit": "8",
+        "target": "31",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Site Preparation",
+            "duration": "3",
+            "predecessors": "-",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "3000",
+            "crashCost": "4000",
+            "resource": "4",
+            "percentComplete": "80",
+            "actualCost": "2590"
+          },
+          {
+            "id": "2",
+            "name": "Foundation",
+            "duration": "6",
+            "predecessors": "1",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "4",
+            "normalCost": "8000",
+            "crashCost": "11000",
+            "resource": "6",
+            "percentComplete": "100",
+            "actualCost": "7760"
+          },
+          {
+            "id": "3",
+            "name": "Order Structural Steel",
+            "duration": "6",
+            "predecessors": "1",
+            "optimistic": "3",
+            "mostLikely": "5",
+            "pessimistic": "13",
+            "normalCost": "2000",
+            "resource": "1",
+            "percentComplete": "90",
+            "actualCost": "2020"
+          },
+          {
+            "id": "4",
+            "name": "Erect Frame",
+            "duration": "7",
+            "predecessors": "2,3",
+            "optimistic": "5",
+            "mostLikely": "7",
+            "pessimistic": "9",
+            "crashDuration": "5",
+            "normalCost": "12000",
+            "crashCost": "15000",
+            "resource": "7",
+            "percentComplete": "45",
+            "actualCost": "5560"
+          },
+          {
+            "id": "5",
+            "name": "Roofing",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "5000",
+            "crashCost": "5800",
+            "resource": "3"
+          },
+          {
+            "id": "6",
+            "name": "Electrical Works",
+            "duration": "5",
+            "predecessors": "4",
+            "optimistic": "3",
+            "mostLikely": "4",
+            "pessimistic": "11",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "8000",
+            "resource": "2"
+          },
+          {
+            "id": "7",
+            "name": "Plumbing",
+            "duration": "3",
+            "predecessors": "2",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "4000",
+            "crashCost": "4600",
+            "resource": "2",
+            "percentComplete": "85",
+            "actualCost": "3810"
+          },
+          {
+            "id": "8",
+            "name": "Interior Finishing",
+            "duration": "6",
+            "predecessors": "5,6,7",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "12",
+            "crashDuration": "4",
+            "normalCost": "7000",
+            "crashCost": "9400",
+            "resource": "6"
+          },
+          {
+            "id": "9",
+            "name": "Final Inspection",
+            "duration": "2",
+            "predecessors": "8",
+            "optimistic": "1",
+            "mostLikely": "2",
+            "pessimistic": "3",
+            "normalCost": "1000",
+            "resource": "2"
+          }
+        ]
+      },
+      "meta": null
+    },
+    {
+      "id": "s-crash",
+      "name": "Crashed to the optimum (27)",
+      "saved": "2026-09-27T18:31:29.272Z",
+      "data": {
+        "name": "Warehouse Expansion (PERT, costs, resources)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "1200",
+        "resName": "Workers",
+        "resLimit": "8",
+        "target": "31",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Site Preparation",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.333333",
+            "mostLikely": "2",
+            "pessimistic": "2.666667",
+            "crashDuration": "2",
+            "normalCost": "3000",
+            "crashCost": "4000",
+            "resource": "4",
+            "percentComplete": "80",
+            "actualCost": "2590"
+          },
+          {
+            "id": "2",
+            "name": "Foundation",
+            "duration": "6",
+            "predecessors": "1",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "4",
+            "normalCost": "8000",
+            "crashCost": "11000",
+            "resource": "6",
+            "percentComplete": "100",
+            "actualCost": "7760"
+          },
+          {
+            "id": "3",
+            "name": "Order Structural Steel",
+            "duration": "6",
+            "predecessors": "1",
+            "optimistic": "3",
+            "mostLikely": "5",
+            "pessimistic": "13",
+            "normalCost": "2000",
+            "resource": "1",
+            "percentComplete": "90",
+            "actualCost": "2020"
+          },
+          {
+            "id": "4",
+            "name": "Erect Frame",
+            "duration": "7",
+            "predecessors": "2,3",
+            "optimistic": "5",
+            "mostLikely": "7",
+            "pessimistic": "9",
+            "crashDuration": "5",
+            "normalCost": "12000",
+            "crashCost": "15000",
+            "resource": "7",
+            "percentComplete": "45",
+            "actualCost": "5560"
+          },
+          {
+            "id": "5",
+            "name": "Roofing",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "5000",
+            "crashCost": "5800",
+            "resource": "3"
+          },
+          {
+            "id": "6",
+            "name": "Electrical Works",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "2.4",
+            "mostLikely": "3.2",
+            "pessimistic": "8.8",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "8000",
+            "resource": "2"
+          },
+          {
+            "id": "7",
+            "name": "Plumbing",
+            "duration": "3",
+            "predecessors": "2",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "4000",
+            "crashCost": "4600",
+            "resource": "2",
+            "percentComplete": "85",
+            "actualCost": "3810"
+          },
+          {
+            "id": "8",
+            "name": "Interior Finishing",
+            "duration": "6",
+            "predecessors": "5,6,7",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "12",
+            "crashDuration": "4",
+            "normalCost": "7000",
+            "crashCost": "9400",
+            "resource": "6"
+          },
+          {
+            "id": "9",
+            "name": "Final Inspection",
+            "duration": "2",
+            "predecessors": "8",
+            "optimistic": "1",
+            "mostLikely": "2",
+            "pessimistic": "3",
+            "normalCost": "1000",
+            "resource": "2"
+          }
+        ]
+      },
+      "meta": {
+        "directCost": 50000
+      }
+    }
+  ]
+}

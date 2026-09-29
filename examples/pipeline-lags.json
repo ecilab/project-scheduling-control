@@ -1,0 +1,466 @@
+{
+  "app": "CPM Analyzer",
+  "version": 2,
+  "name": "Pipeline Installation (SS / FF lags)",
+  "name_ar": "تمديد خط أنابيب (علاقات SS / FF مع تأخير)",
+  "unit": "Days",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": true
+  },
+  "cal": {
+    "start": "2026-10-04",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "350",
+  "resName": "Crew",
+  "resLimit": "8",
+  "target": "26",
+  "prob": "",
+  "status": "9",
+  "activities": [
+    {
+      "id": "1",
+      "name": "Route Survey",
+      "name_ar": "مسح المسار",
+      "duration": "3",
+      "predecessors": "-",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "2400",
+      "crashCost": "2800",
+      "resource": "4",
+      "percentComplete": "80",
+      "actualCost": "2070"
+    },
+    {
+      "id": "2",
+      "name": "Excavate Trench",
+      "name_ar": "حفر الخندق",
+      "duration": "10",
+      "predecessors": "1",
+      "optimistic": "7",
+      "mostLikely": "7",
+      "pessimistic": "25",
+      "crashDuration": "7",
+      "normalCost": "12000",
+      "crashCost": "13950",
+      "resource": "2",
+      "percentComplete": "60",
+      "actualCost": "6980"
+    },
+    {
+      "id": "3",
+      "name": "Lay Pipe",
+      "name_ar": "تمديد الأنابيب",
+      "duration": "10",
+      "predecessors": "2SS+2",
+      "optimistic": "4",
+      "mostLikely": "10",
+      "pessimistic": "16",
+      "crashDuration": "7",
+      "normalCost": "15000",
+      "crashCost": "15900",
+      "resource": "1",
+      "percentComplete": "35",
+      "actualCost": "5880"
+    },
+    {
+      "id": "4",
+      "name": "Backfill",
+      "name_ar": "الردم",
+      "duration": "8",
+      "predecessors": "3FF+1",
+      "optimistic": "6",
+      "mostLikely": "8",
+      "pessimistic": "10",
+      "crashDuration": "6",
+      "normalCost": "8000",
+      "crashCost": "9800",
+      "resource": "2",
+      "percentComplete": "15",
+      "actualCost": "1240"
+    },
+    {
+      "id": "5",
+      "name": "Pressure Test",
+      "name_ar": "اختبار الضغط",
+      "duration": "2",
+      "predecessors": "4",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "normalCost": "4000",
+      "resource": "3"
+    },
+    {
+      "id": "6",
+      "name": "Road Reinstatement",
+      "name_ar": "إعادة الطريق",
+      "duration": "4",
+      "predecessors": "5",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "3600",
+      "crashCost": "4350",
+      "resource": "4"
+    },
+    {
+      "id": "7",
+      "name": "Traffic Management",
+      "name_ar": "إدارة المرور",
+      "duration": "6",
+      "predecessors": "2SS",
+      "optimistic": "4",
+      "mostLikely": "6",
+      "pessimistic": "8",
+      "crashDuration": "5",
+      "normalCost": "4800",
+      "crashCost": "5150",
+      "resource": "5",
+      "percentComplete": "85",
+      "actualCost": "4570"
+    }
+  ],
+  "baseline": {
+    "saved": "2026-09-27T18:31:29.325Z",
+    "T": 22,
+    "basis": "cost",
+    "acts": {
+      "1": {
+        "name": "Route Survey",
+        "ES": 0,
+        "EF": 3,
+        "dur": 3,
+        "bac": 2400
+      },
+      "2": {
+        "name": "Excavate Trench",
+        "ES": 3,
+        "EF": 13,
+        "dur": 10,
+        "bac": 12000
+      },
+      "3": {
+        "name": "Lay Pipe",
+        "ES": 5,
+        "EF": 15,
+        "dur": 10,
+        "bac": 15000
+      },
+      "4": {
+        "name": "Backfill",
+        "ES": 8,
+        "EF": 16,
+        "dur": 8,
+        "bac": 8000
+      },
+      "5": {
+        "name": "Pressure Test",
+        "ES": 16,
+        "EF": 18,
+        "dur": 2,
+        "bac": 4000
+      },
+      "6": {
+        "name": "Road Reinstatement",
+        "ES": 18,
+        "EF": 22,
+        "dur": 4,
+        "bac": 3600
+      },
+      "7": {
+        "name": "Traffic Management",
+        "ES": 3,
+        "EF": 9,
+        "dur": 6,
+        "bac": 4800
+      }
+    }
+  },
+  "log": [
+    {
+      "t": 3,
+      "pv": 2400,
+      "ev": 2334.579439,
+      "ac": 2376.20698
+    },
+    {
+      "t": 6,
+      "pv": 9900,
+      "ev": 9360.280374,
+      "ac": 9700.143985
+    },
+    {
+      "t": 9,
+      "pv": 21400,
+      "ev": 19650,
+      "ac": 20740
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-base",
+      "name": "Base case (normal durations)",
+      "saved": "2026-09-27T18:31:29.325Z",
+      "data": {
+        "name": "Pipeline Installation (SS / FF lags)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "350",
+        "resName": "Crew",
+        "resLimit": "8",
+        "target": "26",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Route Survey",
+            "duration": "3",
+            "predecessors": "-",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "2400",
+            "crashCost": "2800",
+            "resource": "4",
+            "percentComplete": "80",
+            "actualCost": "2070"
+          },
+          {
+            "id": "2",
+            "name": "Excavate Trench",
+            "duration": "10",
+            "predecessors": "1",
+            "optimistic": "7",
+            "mostLikely": "7",
+            "pessimistic": "25",
+            "crashDuration": "7",
+            "normalCost": "12000",
+            "crashCost": "13950",
+            "resource": "2",
+            "percentComplete": "60",
+            "actualCost": "6980"
+          },
+          {
+            "id": "3",
+            "name": "Lay Pipe",
+            "duration": "10",
+            "predecessors": "2SS+2",
+            "optimistic": "4",
+            "mostLikely": "10",
+            "pessimistic": "16",
+            "crashDuration": "7",
+            "normalCost": "15000",
+            "crashCost": "15900",
+            "resource": "1",
+            "percentComplete": "35",
+            "actualCost": "5880"
+          },
+          {
+            "id": "4",
+            "name": "Backfill",
+            "duration": "8",
+            "predecessors": "3FF+1",
+            "optimistic": "6",
+            "mostLikely": "8",
+            "pessimistic": "10",
+            "crashDuration": "6",
+            "normalCost": "8000",
+            "crashCost": "9800",
+            "resource": "2",
+            "percentComplete": "15",
+            "actualCost": "1240"
+          },
+          {
+            "id": "5",
+            "name": "Pressure Test",
+            "duration": "2",
+            "predecessors": "4",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "4000",
+            "resource": "3"
+          },
+          {
+            "id": "6",
+            "name": "Road Reinstatement",
+            "duration": "4",
+            "predecessors": "5",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "3600",
+            "crashCost": "4350",
+            "resource": "4"
+          },
+          {
+            "id": "7",
+            "name": "Traffic Management",
+            "duration": "6",
+            "predecessors": "2SS",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "5",
+            "normalCost": "4800",
+            "crashCost": "5150",
+            "resource": "5",
+            "percentComplete": "85",
+            "actualCost": "4570"
+          }
+        ]
+      },
+      "meta": null
+    },
+    {
+      "id": "s-crash",
+      "name": "Crashed to the optimum (19)",
+      "saved": "2026-09-27T18:31:29.326Z",
+      "data": {
+        "name": "Pipeline Installation (SS / FF lags)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "350",
+        "resName": "Crew",
+        "resLimit": "8",
+        "target": "26",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Route Survey",
+            "duration": "3",
+            "predecessors": "-",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "2400",
+            "crashCost": "2800",
+            "resource": "4",
+            "percentComplete": "80",
+            "actualCost": "2070"
+          },
+          {
+            "id": "2",
+            "name": "Excavate Trench",
+            "duration": "10",
+            "predecessors": "1",
+            "optimistic": "7",
+            "mostLikely": "7",
+            "pessimistic": "25",
+            "crashDuration": "7",
+            "normalCost": "12000",
+            "crashCost": "13950",
+            "resource": "2",
+            "percentComplete": "60",
+            "actualCost": "6980"
+          },
+          {
+            "id": "3",
+            "name": "Lay Pipe",
+            "duration": "7",
+            "predecessors": "2SS+2",
+            "optimistic": "2.8",
+            "mostLikely": "7",
+            "pessimistic": "11.2",
+            "crashDuration": "7",
+            "normalCost": "15000",
+            "crashCost": "15900",
+            "resource": "1",
+            "percentComplete": "35",
+            "actualCost": "5880"
+          },
+          {
+            "id": "4",
+            "name": "Backfill",
+            "duration": "8",
+            "predecessors": "3FF+1",
+            "optimistic": "6",
+            "mostLikely": "8",
+            "pessimistic": "10",
+            "crashDuration": "6",
+            "normalCost": "8000",
+            "crashCost": "9800",
+            "resource": "2",
+            "percentComplete": "15",
+            "actualCost": "1240"
+          },
+          {
+            "id": "5",
+            "name": "Pressure Test",
+            "duration": "2",
+            "predecessors": "4",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "4000",
+            "resource": "3"
+          },
+          {
+            "id": "6",
+            "name": "Road Reinstatement",
+            "duration": "4",
+            "predecessors": "5",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "3600",
+            "crashCost": "4350",
+            "resource": "4"
+          },
+          {
+            "id": "7",
+            "name": "Traffic Management",
+            "duration": "6",
+            "predecessors": "2SS",
+            "optimistic": "4",
+            "mostLikely": "6",
+            "pessimistic": "8",
+            "crashDuration": "5",
+            "normalCost": "4800",
+            "crashCost": "5150",
+            "resource": "5",
+            "percentComplete": "85",
+            "actualCost": "4570"
+          }
+        ]
+      },
+      "meta": {
+        "directCost": 50700
+      }
+    }
+  ]
+}

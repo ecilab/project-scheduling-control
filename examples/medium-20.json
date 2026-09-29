@@ -1,149 +1,1083 @@
 {
   "app": "CPM Analyzer",
-  "version": 1,
+  "version": 2,
   "name": "Production Line Installation (20 activities)",
   "name_ar": "تركيب خط إنتاج (20 نشاطًا)",
   "unit": "Days",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": true
+  },
+  "cal": {
+    "start": "2026-10-04",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "550",
+  "resName": "Technicians",
+  "resLimit": "13",
+  "target": "48",
+  "prob": "",
+  "status": "18",
   "activities": [
     {
       "id": "1",
       "name": "Project Charter",
       "name_ar": "ميثاق المشروع",
       "duration": "2",
-      "predecessors": "-"
+      "predecessors": "-",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "1600",
+      "crashCost": "2000",
+      "resource": "2",
+      "percentComplete": "80",
+      "actualCost": "1380"
     },
     {
       "id": "2",
       "name": "Site Survey",
       "name_ar": "مسح الموقع",
       "duration": "3",
-      "predecessors": "1"
+      "predecessors": "1",
+      "optimistic": "2",
+      "mostLikely": "2",
+      "pessimistic": "8",
+      "crashDuration": "2",
+      "normalCost": "3600",
+      "crashCost": "4250",
+      "resource": "1",
+      "percentComplete": "100",
+      "actualCost": "3490"
     },
     {
       "id": "3",
       "name": "Equipment Specification",
       "name_ar": "مواصفات المعدات",
       "duration": "4",
-      "predecessors": "1"
+      "predecessors": "1",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "6000",
+      "crashCost": "6300",
+      "resource": "2",
+      "percentComplete": "90",
+      "actualCost": "6050"
     },
     {
       "id": "4",
       "name": "Layout Design",
       "name_ar": "تصميم المخطط",
       "duration": "5",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "crashDuration": "4",
+      "normalCost": "5000",
+      "crashCost": "5900",
+      "resource": "3",
+      "percentComplete": "100",
+      "actualCost": "5150"
     },
     {
       "id": "5",
       "name": "Supplier Selection",
       "name_ar": "اختيار الموردين",
       "duration": "4",
-      "predecessors": "3"
+      "predecessors": "3",
+      "optimistic": "3",
+      "mostLikely": "3",
+      "pessimistic": "9",
+      "normalCost": "8000",
+      "resource": "4",
+      "percentComplete": "70",
+      "actualCost": "6050"
     },
     {
       "id": "6",
       "name": "Civil Works",
       "name_ar": "الأعمال المدنية",
       "duration": "8",
-      "predecessors": "4"
+      "predecessors": "4",
+      "optimistic": "4",
+      "mostLikely": "8",
+      "pessimistic": "12",
+      "crashDuration": "6",
+      "normalCost": "7200",
+      "crashCost": "8700",
+      "resource": "5",
+      "percentComplete": "100",
+      "actualCost": "6980"
     },
     {
       "id": "7",
       "name": "Equipment Procurement",
       "name_ar": "شراء المعدات",
       "duration": "10",
-      "predecessors": "5"
+      "predecessors": "5",
+      "optimistic": "7",
+      "mostLikely": "10",
+      "pessimistic": "13",
+      "crashDuration": "7",
+      "normalCost": "8000",
+      "crashCost": "9050",
+      "resource": "6",
+      "percentComplete": "70",
+      "actualCost": "6270"
     },
     {
       "id": "8",
       "name": "Electrical Design",
       "name_ar": "التصميم الكهربائي",
       "duration": "4",
-      "predecessors": "4"
+      "predecessors": "4",
+      "optimistic": "3",
+      "mostLikely": "3",
+      "pessimistic": "9",
+      "crashDuration": "3",
+      "normalCost": "4800",
+      "crashCost": "6000",
+      "resource": "5",
+      "percentComplete": "80",
+      "actualCost": "3960"
     },
     {
       "id": "9",
       "name": "Electrical Installation",
       "name_ar": "التمديدات الكهربائية",
       "duration": "6",
-      "predecessors": "6,8"
+      "predecessors": "6,8",
+      "optimistic": "2",
+      "mostLikely": "6",
+      "pessimistic": "10",
+      "crashDuration": "5",
+      "normalCost": "9000",
+      "crashCost": "9400",
+      "resource": "3"
     },
     {
       "id": "10",
       "name": "Utilities (Air & Water)",
       "name_ar": "المرافق (الهواء والماء)",
       "duration": "5",
-      "predecessors": "6"
+      "predecessors": "6",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "normalCost": "5000",
+      "resource": "4"
     },
     {
       "id": "11",
       "name": "Machine Delivery",
       "name_ar": "توريد الآلات",
       "duration": "3",
-      "predecessors": "7"
+      "predecessors": "7",
+      "optimistic": "2",
+      "mostLikely": "2",
+      "pessimistic": "8",
+      "crashDuration": "2",
+      "normalCost": "6000",
+      "crashCost": "6300",
+      "resource": "2"
     },
     {
       "id": "12",
       "name": "Machine Installation",
       "name_ar": "تركيب الآلات",
       "duration": "7",
-      "predecessors": "9,11"
+      "predecessors": "9,11",
+      "optimistic": "3",
+      "mostLikely": "7",
+      "pessimistic": "11",
+      "crashDuration": "5",
+      "normalCost": "6300",
+      "crashCost": "8100",
+      "resource": "1"
     },
     {
       "id": "13",
       "name": "Utilities Hook-up",
       "name_ar": "توصيل المرافق",
       "duration": "3",
-      "predecessors": "10,12"
+      "predecessors": "10,12",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "2400",
+      "crashCost": "2900",
+      "resource": "2"
     },
     {
       "id": "14",
       "name": "PLC Programming",
       "name_ar": "برمجة PLC",
       "duration": "6",
-      "predecessors": "8"
+      "predecessors": "8",
+      "optimistic": "4",
+      "mostLikely": "4",
+      "pessimistic": "16",
+      "crashDuration": "5",
+      "normalCost": "7200",
+      "crashCost": "7950",
+      "resource": "3",
+      "percentComplete": "55",
+      "actualCost": "3840"
     },
     {
       "id": "15",
       "name": "Safety Systems",
       "name_ar": "أنظمة السلامة",
       "duration": "4",
-      "predecessors": "9"
+      "predecessors": "9",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "normalCost": "6000",
+      "resource": "4"
     },
     {
       "id": "16",
       "name": "Operator Training",
       "name_ar": "تدريب المشغلين",
       "duration": "5",
-      "predecessors": "14"
+      "predecessors": "14",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "crashDuration": "4",
+      "normalCost": "5000",
+      "crashCost": "6200",
+      "resource": "5"
     },
     {
       "id": "17",
       "name": "Dry Run Testing",
       "name_ar": "الاختبار التشغيلي دون إنتاج",
       "duration": "4",
-      "predecessors": "13,14"
+      "predecessors": "13,14",
+      "optimistic": "3",
+      "mostLikely": "3",
+      "pessimistic": "9",
+      "crashDuration": "3",
+      "normalCost": "8000",
+      "crashCost": "8400",
+      "resource": "6"
     },
     {
       "id": "18",
       "name": "Safety Certification",
       "name_ar": "شهادة السلامة",
       "duration": "2",
-      "predecessors": "15,17"
+      "predecessors": "15,17",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "1800",
+      "crashCost": "2450",
+      "resource": "5"
     },
     {
       "id": "19",
       "name": "Trial Production",
       "name_ar": "الإنتاج التجريبي",
       "duration": "5",
-      "predecessors": "16,17"
+      "predecessors": "16,17",
+      "optimistic": "4",
+      "mostLikely": "5",
+      "pessimistic": "6",
+      "crashDuration": "4",
+      "normalCost": "4000",
+      "crashCost": "4300",
+      "resource": "3"
     },
     {
       "id": "20",
       "name": "Handover & Launch",
       "name_ar": "التسليم والإطلاق",
       "duration": "2",
-      "predecessors": "18,19"
+      "predecessors": "18,19",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "normalCost": "2400",
+      "resource": "4"
+    }
+  ],
+  "baseline": {
+    "saved": "2026-09-27T18:31:28.983Z",
+    "T": 45,
+    "basis": "cost",
+    "acts": {
+      "1": {
+        "name": "Project Charter",
+        "ES": 0,
+        "EF": 2,
+        "dur": 2,
+        "bac": 1600
+      },
+      "2": {
+        "name": "Site Survey",
+        "ES": 2,
+        "EF": 5,
+        "dur": 3,
+        "bac": 3600
+      },
+      "3": {
+        "name": "Equipment Specification",
+        "ES": 2,
+        "EF": 6,
+        "dur": 4,
+        "bac": 6000
+      },
+      "4": {
+        "name": "Layout Design",
+        "ES": 5,
+        "EF": 10,
+        "dur": 5,
+        "bac": 5000
+      },
+      "5": {
+        "name": "Supplier Selection",
+        "ES": 6,
+        "EF": 10,
+        "dur": 4,
+        "bac": 8000
+      },
+      "6": {
+        "name": "Civil Works",
+        "ES": 10,
+        "EF": 18,
+        "dur": 8,
+        "bac": 7200
+      },
+      "7": {
+        "name": "Equipment Procurement",
+        "ES": 10,
+        "EF": 20,
+        "dur": 10,
+        "bac": 8000
+      },
+      "8": {
+        "name": "Electrical Design",
+        "ES": 10,
+        "EF": 14,
+        "dur": 4,
+        "bac": 4800
+      },
+      "9": {
+        "name": "Electrical Installation",
+        "ES": 18,
+        "EF": 24,
+        "dur": 6,
+        "bac": 9000
+      },
+      "10": {
+        "name": "Utilities (Air & Water)",
+        "ES": 18,
+        "EF": 23,
+        "dur": 5,
+        "bac": 5000
+      },
+      "11": {
+        "name": "Machine Delivery",
+        "ES": 20,
+        "EF": 23,
+        "dur": 3,
+        "bac": 6000
+      },
+      "12": {
+        "name": "Machine Installation",
+        "ES": 24,
+        "EF": 31,
+        "dur": 7,
+        "bac": 6300
+      },
+      "13": {
+        "name": "Utilities Hook-up",
+        "ES": 31,
+        "EF": 34,
+        "dur": 3,
+        "bac": 2400
+      },
+      "14": {
+        "name": "PLC Programming",
+        "ES": 14,
+        "EF": 20,
+        "dur": 6,
+        "bac": 7200
+      },
+      "15": {
+        "name": "Safety Systems",
+        "ES": 24,
+        "EF": 28,
+        "dur": 4,
+        "bac": 6000
+      },
+      "16": {
+        "name": "Operator Training",
+        "ES": 20,
+        "EF": 25,
+        "dur": 5,
+        "bac": 5000
+      },
+      "17": {
+        "name": "Dry Run Testing",
+        "ES": 34,
+        "EF": 38,
+        "dur": 4,
+        "bac": 8000
+      },
+      "18": {
+        "name": "Safety Certification",
+        "ES": 38,
+        "EF": 40,
+        "dur": 2,
+        "bac": 1800
+      },
+      "19": {
+        "name": "Trial Production",
+        "ES": 38,
+        "EF": 43,
+        "dur": 5,
+        "bac": 4000
+      },
+      "20": {
+        "name": "Handover & Launch",
+        "ES": 43,
+        "EF": 45,
+        "dur": 2,
+        "bac": 2400
+      }
+    }
+  },
+  "log": [
+    {
+      "t": 6,
+      "pv": 12200,
+      "ev": 11692.09564,
+      "ac": 11846.685232
+    },
+    {
+      "t": 12,
+      "pv": 30000,
+      "ev": 27502.109705,
+      "ac": 28239.10432
+    },
+    {
+      "t": 18,
+      "pv": 47400,
+      "ev": 41480,
+      "ac": 43170
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "s-base",
+      "name": "Base case (normal durations)",
+      "saved": "2026-09-27T18:31:28.983Z",
+      "data": {
+        "name": "Production Line Installation (20 activities)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "550",
+        "resName": "Technicians",
+        "resLimit": "13",
+        "target": "48",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Project Charter",
+            "duration": "2",
+            "predecessors": "-",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "1600",
+            "crashCost": "2000",
+            "resource": "2",
+            "percentComplete": "80",
+            "actualCost": "1380"
+          },
+          {
+            "id": "2",
+            "name": "Site Survey",
+            "duration": "3",
+            "predecessors": "1",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "3600",
+            "crashCost": "4250",
+            "resource": "1",
+            "percentComplete": "100",
+            "actualCost": "3490"
+          },
+          {
+            "id": "3",
+            "name": "Equipment Specification",
+            "duration": "4",
+            "predecessors": "1",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "6300",
+            "resource": "2",
+            "percentComplete": "90",
+            "actualCost": "6050"
+          },
+          {
+            "id": "4",
+            "name": "Layout Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "5000",
+            "crashCost": "5900",
+            "resource": "3",
+            "percentComplete": "100",
+            "actualCost": "5150"
+          },
+          {
+            "id": "5",
+            "name": "Supplier Selection",
+            "duration": "4",
+            "predecessors": "3",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "normalCost": "8000",
+            "resource": "4",
+            "percentComplete": "70",
+            "actualCost": "6050"
+          },
+          {
+            "id": "6",
+            "name": "Civil Works",
+            "duration": "8",
+            "predecessors": "4",
+            "optimistic": "4",
+            "mostLikely": "8",
+            "pessimistic": "12",
+            "crashDuration": "6",
+            "normalCost": "7200",
+            "crashCost": "8700",
+            "resource": "5",
+            "percentComplete": "100",
+            "actualCost": "6980"
+          },
+          {
+            "id": "7",
+            "name": "Equipment Procurement",
+            "duration": "10",
+            "predecessors": "5",
+            "optimistic": "7",
+            "mostLikely": "10",
+            "pessimistic": "13",
+            "crashDuration": "7",
+            "normalCost": "8000",
+            "crashCost": "9050",
+            "resource": "6",
+            "percentComplete": "70",
+            "actualCost": "6270"
+          },
+          {
+            "id": "8",
+            "name": "Electrical Design",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "crashDuration": "3",
+            "normalCost": "4800",
+            "crashCost": "6000",
+            "resource": "5",
+            "percentComplete": "80",
+            "actualCost": "3960"
+          },
+          {
+            "id": "9",
+            "name": "Electrical Installation",
+            "duration": "6",
+            "predecessors": "6,8",
+            "optimistic": "2",
+            "mostLikely": "6",
+            "pessimistic": "10",
+            "crashDuration": "5",
+            "normalCost": "9000",
+            "crashCost": "9400",
+            "resource": "3"
+          },
+          {
+            "id": "10",
+            "name": "Utilities (Air & Water)",
+            "duration": "5",
+            "predecessors": "6",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "normalCost": "5000",
+            "resource": "4"
+          },
+          {
+            "id": "11",
+            "name": "Machine Delivery",
+            "duration": "3",
+            "predecessors": "7",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "6000",
+            "crashCost": "6300",
+            "resource": "2"
+          },
+          {
+            "id": "12",
+            "name": "Machine Installation",
+            "duration": "7",
+            "predecessors": "9,11",
+            "optimistic": "3",
+            "mostLikely": "7",
+            "pessimistic": "11",
+            "crashDuration": "5",
+            "normalCost": "6300",
+            "crashCost": "8100",
+            "resource": "1"
+          },
+          {
+            "id": "13",
+            "name": "Utilities Hook-up",
+            "duration": "3",
+            "predecessors": "10,12",
+            "optimistic": "2",
+            "mostLikely": "3",
+            "pessimistic": "4",
+            "crashDuration": "2",
+            "normalCost": "2400",
+            "crashCost": "2900",
+            "resource": "2"
+          },
+          {
+            "id": "14",
+            "name": "PLC Programming",
+            "duration": "6",
+            "predecessors": "8",
+            "optimistic": "4",
+            "mostLikely": "4",
+            "pessimistic": "16",
+            "crashDuration": "5",
+            "normalCost": "7200",
+            "crashCost": "7950",
+            "resource": "3",
+            "percentComplete": "55",
+            "actualCost": "3840"
+          },
+          {
+            "id": "15",
+            "name": "Safety Systems",
+            "duration": "4",
+            "predecessors": "9",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "normalCost": "6000",
+            "resource": "4"
+          },
+          {
+            "id": "16",
+            "name": "Operator Training",
+            "duration": "5",
+            "predecessors": "14",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "5000",
+            "crashCost": "6200",
+            "resource": "5"
+          },
+          {
+            "id": "17",
+            "name": "Dry Run Testing",
+            "duration": "4",
+            "predecessors": "13,14",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "crashDuration": "3",
+            "normalCost": "8000",
+            "crashCost": "8400",
+            "resource": "6"
+          },
+          {
+            "id": "18",
+            "name": "Safety Certification",
+            "duration": "2",
+            "predecessors": "15,17",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "1800",
+            "crashCost": "2450",
+            "resource": "5"
+          },
+          {
+            "id": "19",
+            "name": "Trial Production",
+            "duration": "5",
+            "predecessors": "16,17",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "4000",
+            "crashCost": "4300",
+            "resource": "3"
+          },
+          {
+            "id": "20",
+            "name": "Handover & Launch",
+            "duration": "2",
+            "predecessors": "18,19",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "2400",
+            "resource": "4"
+          }
+        ]
+      },
+      "meta": null
+    },
+    {
+      "id": "s-crash",
+      "name": "Crashed to the optimum (40)",
+      "saved": "2026-09-27T18:31:28.987Z",
+      "data": {
+        "name": "Production Line Installation (20 activities)",
+        "unit": "Days",
+        "cols": {
+          "pert": true,
+          "cost": true,
+          "res": true,
+          "prog": true
+        },
+        "cal": {
+          "start": "2026-10-04",
+          "weekend": "fri-sat",
+          "holidays": ""
+        },
+        "indirect": "550",
+        "resName": "Technicians",
+        "resLimit": "13",
+        "target": "48",
+        "prob": "",
+        "activities": [
+          {
+            "id": "1",
+            "name": "Project Charter",
+            "duration": "1",
+            "predecessors": "-",
+            "optimistic": "0.75",
+            "mostLikely": "1",
+            "pessimistic": "1.25",
+            "crashDuration": "1",
+            "normalCost": "1600",
+            "crashCost": "2000",
+            "resource": "2",
+            "percentComplete": "80",
+            "actualCost": "1380"
+          },
+          {
+            "id": "2",
+            "name": "Site Survey",
+            "duration": "3",
+            "predecessors": "1",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "3600",
+            "crashCost": "4250",
+            "resource": "1",
+            "percentComplete": "100",
+            "actualCost": "3490"
+          },
+          {
+            "id": "3",
+            "name": "Equipment Specification",
+            "duration": "4",
+            "predecessors": "1",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "crashDuration": "3",
+            "normalCost": "6000",
+            "crashCost": "6300",
+            "resource": "2",
+            "percentComplete": "90",
+            "actualCost": "6050"
+          },
+          {
+            "id": "4",
+            "name": "Layout Design",
+            "duration": "5",
+            "predecessors": "2",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "5000",
+            "crashCost": "5900",
+            "resource": "3",
+            "percentComplete": "100",
+            "actualCost": "5150"
+          },
+          {
+            "id": "5",
+            "name": "Supplier Selection",
+            "duration": "4",
+            "predecessors": "3",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "normalCost": "8000",
+            "resource": "4",
+            "percentComplete": "70",
+            "actualCost": "6050"
+          },
+          {
+            "id": "6",
+            "name": "Civil Works",
+            "duration": "8",
+            "predecessors": "4",
+            "optimistic": "4",
+            "mostLikely": "8",
+            "pessimistic": "12",
+            "crashDuration": "6",
+            "normalCost": "7200",
+            "crashCost": "8700",
+            "resource": "5",
+            "percentComplete": "100",
+            "actualCost": "6980"
+          },
+          {
+            "id": "7",
+            "name": "Equipment Procurement",
+            "duration": "10",
+            "predecessors": "5",
+            "optimistic": "7",
+            "mostLikely": "10",
+            "pessimistic": "13",
+            "crashDuration": "7",
+            "normalCost": "8000",
+            "crashCost": "9050",
+            "resource": "6",
+            "percentComplete": "70",
+            "actualCost": "6270"
+          },
+          {
+            "id": "8",
+            "name": "Electrical Design",
+            "duration": "4",
+            "predecessors": "4",
+            "optimistic": "3",
+            "mostLikely": "3",
+            "pessimistic": "9",
+            "crashDuration": "3",
+            "normalCost": "4800",
+            "crashCost": "6000",
+            "resource": "5",
+            "percentComplete": "80",
+            "actualCost": "3960"
+          },
+          {
+            "id": "9",
+            "name": "Electrical Installation",
+            "duration": "5",
+            "predecessors": "6,8",
+            "optimistic": "1.666667",
+            "mostLikely": "5",
+            "pessimistic": "8.333333",
+            "crashDuration": "5",
+            "normalCost": "9000",
+            "crashCost": "9400",
+            "resource": "3"
+          },
+          {
+            "id": "10",
+            "name": "Utilities (Air & Water)",
+            "duration": "5",
+            "predecessors": "6",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "normalCost": "5000",
+            "resource": "4"
+          },
+          {
+            "id": "11",
+            "name": "Machine Delivery",
+            "duration": "3",
+            "predecessors": "7",
+            "optimistic": "2",
+            "mostLikely": "2",
+            "pessimistic": "8",
+            "crashDuration": "2",
+            "normalCost": "6000",
+            "crashCost": "6300",
+            "resource": "2"
+          },
+          {
+            "id": "12",
+            "name": "Machine Installation",
+            "duration": "7",
+            "predecessors": "9,11",
+            "optimistic": "3",
+            "mostLikely": "7",
+            "pessimistic": "11",
+            "crashDuration": "5",
+            "normalCost": "6300",
+            "crashCost": "8100",
+            "resource": "1"
+          },
+          {
+            "id": "13",
+            "name": "Utilities Hook-up",
+            "duration": "2",
+            "predecessors": "10,12",
+            "optimistic": "1.333333",
+            "mostLikely": "2",
+            "pessimistic": "2.666667",
+            "crashDuration": "2",
+            "normalCost": "2400",
+            "crashCost": "2900",
+            "resource": "2"
+          },
+          {
+            "id": "14",
+            "name": "PLC Programming",
+            "duration": "6",
+            "predecessors": "8",
+            "optimistic": "4",
+            "mostLikely": "4",
+            "pessimistic": "16",
+            "crashDuration": "5",
+            "normalCost": "7200",
+            "crashCost": "7950",
+            "resource": "3",
+            "percentComplete": "55",
+            "actualCost": "3840"
+          },
+          {
+            "id": "15",
+            "name": "Safety Systems",
+            "duration": "4",
+            "predecessors": "9",
+            "optimistic": "2",
+            "mostLikely": "4",
+            "pessimistic": "6",
+            "normalCost": "6000",
+            "resource": "4"
+          },
+          {
+            "id": "16",
+            "name": "Operator Training",
+            "duration": "5",
+            "predecessors": "14",
+            "optimistic": "4",
+            "mostLikely": "5",
+            "pessimistic": "6",
+            "crashDuration": "4",
+            "normalCost": "5000",
+            "crashCost": "6200",
+            "resource": "5"
+          },
+          {
+            "id": "17",
+            "name": "Dry Run Testing",
+            "duration": "3",
+            "predecessors": "13,14",
+            "optimistic": "2.25",
+            "mostLikely": "2.25",
+            "pessimistic": "6.75",
+            "crashDuration": "3",
+            "normalCost": "8000",
+            "crashCost": "8400",
+            "resource": "6"
+          },
+          {
+            "id": "18",
+            "name": "Safety Certification",
+            "duration": "2",
+            "predecessors": "15,17",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "crashDuration": "1",
+            "normalCost": "1800",
+            "crashCost": "2450",
+            "resource": "5"
+          },
+          {
+            "id": "19",
+            "name": "Trial Production",
+            "duration": "4",
+            "predecessors": "16,17",
+            "optimistic": "3.2",
+            "mostLikely": "4",
+            "pessimistic": "4.8",
+            "crashDuration": "4",
+            "normalCost": "4000",
+            "crashCost": "4300",
+            "resource": "3"
+          },
+          {
+            "id": "20",
+            "name": "Handover & Launch",
+            "duration": "2",
+            "predecessors": "18,19",
+            "optimistic": "1.5",
+            "mostLikely": "2",
+            "pessimistic": "2.5",
+            "normalCost": "2400",
+            "resource": "4"
+          }
+        ]
+      },
+      "meta": {
+        "directCost": 109300
+      }
     }
   ]
 }

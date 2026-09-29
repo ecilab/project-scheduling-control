@@ -1,4 +1,4 @@
-# Project Scheduling & Critical Path Analyzer
+# Project Scheduling & Control
 
 **By Prof. Abdulrahman Al-Ahmari, ECI Lab**
 
@@ -12,8 +12,6 @@ An interactive, bilingual (English / Arabic) web tool for learning and applying 
 
 ![Activity-on-node network diagram](assets/screenshots/network.png)
 
-[العربية ↓](#محلل-جدولة-المشاريع-والمسار-الحرج)
-
 ## Features
 
 - **CPM calculation:** forward and backward passes in topological order, ES, EF, LS, LF, total float and free float.
@@ -22,9 +20,22 @@ An interactive, bilingual (English / Arabic) web tool for learning and applying 
 - **Animated Gantt chart:** dependency arrows, float tails, a step-by-step critical-path trace, schedule playback at ×1/×2/×4, zoom and PNG export.
 - **Network diagram:** activity-on-node layout with an animated run along the critical path.
 - **Schedule analysis:** statements and risk indicators generated only from the calculated values.
-- **Five example projects:** 10, 11, 20 and 40 activities, plus a validation demo containing a cycle.
-- **Import / export:** CSV and JSON, a printable report, and a light/dark theme.
+- **Relationship types with lags:** finish-to-start, start-to-start, finish-to-finish and start-to-finish, with lags and leads (for example `4SS+2`, `3FF`, `5FS-1`), as in MS Project and Primavera.
+- **Calendar dates:** a project start date, a weekend pattern (including Friday–Saturday) and holidays, so the Gantt chart, CPM table and exports show real dates.
+- **AOA diagram:** the activity-on-arrow network with the minimum dummy activities and early/late event times, next to the activity-on-node diagram.
+- **Advanced analysis tabs:**
+  - **PERT:** optimistic, most likely and pessimistic times, expected times, critical-path variance, P(T ≤ target) and the duration for a required probability, with the working shown.
+  - **Monte Carlo:** thousands of seeded runs, completion-time histogram and S-curve, P50/P80/P90 and the criticality index of every activity.
+  - **Crashing:** step-by-step time–cost trade-off using the cheapest cut through all critical paths, with direct, indirect and total cost curves and the optimum duration.
+  - **Resources:** resource histogram for early and late start, levelling within float, and scheduling within a resource limit.
+  - **Earned value:** baseline, % complete and actual cost, PV, EV, AC, SV, CV, SPI, CPI, EAC, earned schedule and the S-curve.
+  - **Scenarios:** save what-if versions and compare duration, cost, probability and resource peak side by side.
+- **Step-by-step solution:** every value written with its numbers, as on the board (`ES₇ = max(EF₄, EF₅) = max(12, 14) = 14`), played step by step on the network and exported as a printable answer sheet.
+- **Student practice mode:** hides the answers; students fill in ES, EF, LS, LF, float and the critical activities. Each wrong value is traced to the misconception behind it (for example *used the smallest EF instead of the largest*, *confused total float with free float*, *forgot the other successors*).
+- **Seven example projects:** 10, 11, 20 and 40 activities, a PERT/cost/resource example, a lag example and a validation demo containing a cycle. Every example includes PERT estimates, costs and crash data, resources, a calendar, progress with a baseline, and two scenarios, so all the tools work on it straight away.
+- **Import / export:** CSV and JSON, Excel (.xlsx) with live CPM formulas, MS Project XML, a printable report, and a light/dark theme.
 - **Arabic interface** with right-to-left layout.
+- **Optional AI assistant:** off by default. With your own Claude (Anthropic) or OpenAI API key, it explains the schedule in plain language and answers questions about it; in Practice mode it gives hints only and is never given the correct values.
 
 ## Quick start
 
@@ -40,6 +51,7 @@ See [`docs/user-guide.md`](docs/user-guide.md) for a full walkthrough and [`docs
 
 - [`docs/exercises.md`](docs/exercises.md) contains student exercises based on the built-in examples.
 - [`docs/exercises-answers.md`](docs/exercises-answers.md) contains the answers, all produced by the tool's own engine. Remove this file from a public copy if you want to use the exercises for assessment.
+- **Practice mode** (the Practice button) hides every result so students can calculate the schedule themselves and check it cell by cell. Use **Show answers** to reveal the solution in class.
 - [`examples/`](examples) holds every example as JSON, plus `template.csv` for students to fill in and import.
 
 ## Repository contents
@@ -47,7 +59,7 @@ See [`docs/user-guide.md`](docs/user-guide.md) for a full walkthrough and [`docs
 | Path | Contents |
 |---|---|
 | `index.html` | The complete application (HTML, CSS and JavaScript in one file) |
-| `examples/` | Example projects (JSON) and a CSV template |
+| `examples/` | Example projects (JSON, with the data for every tool) and a CSV template |
 | `docs/` | User guide, CPM method, exercises and answers |
 | `LICENSE` | MIT License (code) |
 | `NOTICE.md` | Logo exclusion, documentation license, fonts and privacy |
@@ -55,7 +67,9 @@ See [`docs/user-guide.md`](docs/user-guide.md) for a full walkthrough and [`docs
 
 ## Privacy
 
-Everything runs in the browser. No project data is sent anywhere; projects are saved only in the visitor's own browser storage.
+Everything runs in the browser. By default, no project data is sent anywhere; projects are saved only in the visitor's own browser storage.
+
+If you turn on the optional AI assistant and enter your own API key, the project data and your question are sent to the provider you choose (Anthropic or OpenAI) to generate the answer. Do not include personal or confidential information in AI requests. The key is sent only to that provider and is kept in the browser: for the current tab only, unless you choose to remember it on the device.
 
 ## License
 
@@ -65,50 +79,6 @@ Everything runs in the browser. No project data is sent anywhere; projects are s
 
 ## How to cite
 
-> Al-Ahmari, A. (2026). *Project Scheduling & Critical Path Analyzer* (Version 1.0.0) [Computer software]. ECI Lab. https://github.com/ecilab/cpm-analyzer
+> Al-Ahmari, A. (2026). *Project Scheduling & Control* (Version 1.1.0) [Computer software]. ECI Lab. https://github.com/ecilab/cpm-analyzer
 
 GitHub also shows a **Cite this repository** button generated from [`CITATION.cff`](CITATION.cff).
-
----
-
-<div dir="rtl">
-
-# محلل جدولة المشاريع والمسار الحرج
-
-**إعداد: أ.د. عبدالرحمن الأحمري، مختبر ECI**
-
-أداة ويب تفاعلية ثنائية اللغة (العربية والإنجليزية) لتعلّم **طريقة المسار الحرج (CPM)** وتطبيقها. أدخل الأنشطة ومددها والأنشطة السابقة لها، فتحسب الأداة الجدول الزمني كاملًا، وتحدّد جميع المسارات الحرجة، وتشرح النتائج.
-
-**العرض المباشر:** https://ecilab.github.io/cpm-analyzer/
-
-## المزايا
-
-- **حساب CPM:** الحساب الأمامي والخلفي وفق الترتيب الطوبولوجي، وقيم ES و EF و LS و LF، والفائض الكلي والفائض الحر.
-- **جميع المسارات الحرجة:** تُحصر كل المسارات ذات الفائض الصفري من البداية إلى النهاية، لا مسار واحد فقط.
-- **التحقق من المدخلات:** الأرقام المكررة، والأسماء المفقودة، والمدد السالبة، والأنشطة السابقة غير الموجودة، والاعتماد على النفس، والاعتماد الدائري مع عرض الحلقة نفسها.
-- **مخطط جانت متحرك:** أسهم الاعتماد، وذيول الفائض، وتتبّع المسار الحرج خطوة بخطوة، وتشغيل الجدول بسرعات ×1 و×2 و×4، والتكبير، والتصدير بصيغة PNG.
-- **مخطط الشبكة:** عرض الأنشطة على العُقد مع حركة على المسار الحرج.
-- **تحليل الجدول:** عبارات ومؤشرات مخاطر مستخرجة من القيم المحسوبة فقط.
-- **خمسة أمثلة جاهزة:** بأحجام 10 و11 و20 و40 نشاطًا، إضافة إلى مثال للتحقق يحتوي على حلقة دائرية.
-- **الاستيراد والتصدير:** بصيغتي CSV و JSON، وتقرير قابل للطباعة، ووضعان فاتح وداكن.
-
-## البدء السريع
-
-افتح الملف `index.html` في أي متصفح حديث، ولا حاجة إلى أي تثبيت.
-
-1. انقر على أحد الأمثلة فوق جدول الأنشطة، أو أدخل أنشطتك.
-2. افصل بين الأنشطة السابقة المتعددة بفاصلة (مثل `4,5`)، واترك الحقل فارغًا أو اكتب `-` للنشاط الابتدائي.
-3. يُعاد حساب الجدول تلقائيًا أثناء الكتابة.
-
-## لأعضاء هيئة التدريس
-
-- يحتوي الملف `docs/exercises.md` على تمارين للطلاب مبنية على الأمثلة الجاهزة.
-- يحتوي الملف `docs/exercises-answers.md` على الإجابات. احذفه من النسخة العامة إن أردت استخدام التمارين في التقييم.
-
-## الترخيص
-
-- **الشيفرة البرمجية:** رخصة MIT.
-- **الوثائق والأمثلة:** رخصة CC BY 4.0.
-- **الاسم والشعار:** اسم مختبر ECI وشعاره غير مشمولين بهذه التراخيص، انظر `NOTICE.md`.
-
-</div>

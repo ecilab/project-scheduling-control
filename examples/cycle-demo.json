@@ -1,65 +1,134 @@
 {
   "app": "CPM Analyzer",
-  "version": 1,
+  "version": 2,
   "name": "Validation demo: circular dependency",
   "name_ar": "عرض التحقق: اعتماد دائري",
   "unit": "Days",
+  "cols": {
+    "pert": true,
+    "cost": true,
+    "res": true,
+    "prog": false
+  },
+  "cal": {
+    "start": "2026-10-04",
+    "weekend": "fri-sat",
+    "holidays": ""
+  },
+  "indirect": "1000",
+  "resName": "Workers",
+  "resLimit": "8",
+  "target": "22",
+  "prob": "",
+  "status": "",
   "activities": [
     {
       "id": "1",
       "name": "Site Survey",
       "name_ar": "مسح الموقع",
       "duration": "2",
-      "predecessors": "-"
+      "predecessors": "-",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "1600",
+      "crashCost": "2000",
+      "resource": "3"
     },
     {
       "id": "2",
       "name": "Permit Application",
       "name_ar": "طلب التصاريح",
       "duration": "3",
-      "predecessors": "1"
+      "predecessors": "1",
+      "optimistic": "2",
+      "mostLikely": "2",
+      "pessimistic": "8",
+      "crashDuration": "2",
+      "normalCost": "3600",
+      "crashCost": "4250",
+      "resource": "4"
     },
     {
       "id": "3",
       "name": "Layout Design",
       "name_ar": "تصميم المخطط",
       "duration": "4",
-      "predecessors": "1,7"
+      "predecessors": "1,7",
+      "optimistic": "2",
+      "mostLikely": "4",
+      "pessimistic": "6",
+      "crashDuration": "3",
+      "normalCost": "6000",
+      "crashCost": "6300",
+      "resource": "5"
     },
     {
       "id": "4",
       "name": "Material Order",
       "name_ar": "طلب المواد",
       "duration": "2",
-      "predecessors": "2"
+      "predecessors": "2",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "2000",
+      "crashCost": "2900",
+      "resource": "6"
     },
     {
       "id": "5",
       "name": "Assembly",
       "name_ar": "التجميع",
       "duration": "5",
-      "predecessors": "3"
+      "predecessors": "3",
+      "optimistic": "4",
+      "mostLikely": "4",
+      "pessimistic": "10",
+      "normalCost": "10000",
+      "resource": "5"
     },
     {
       "id": "6",
       "name": "Inspection",
       "name_ar": "الفحص",
       "duration": "2",
-      "predecessors": "4"
+      "predecessors": "4",
+      "optimistic": "1.5",
+      "mostLikely": "2",
+      "pessimistic": "2.5",
+      "crashDuration": "1",
+      "normalCost": "1800",
+      "crashCost": "2550",
+      "resource": "3"
     },
     {
       "id": "7",
       "name": "Rework Review",
       "name_ar": "مراجعة إعادة العمل",
       "duration": "3",
-      "predecessors": "5"
+      "predecessors": "5",
+      "optimistic": "2",
+      "mostLikely": "3",
+      "pessimistic": "4",
+      "crashDuration": "2",
+      "normalCost": "2400",
+      "crashCost": "2750",
+      "resource": "4"
     },
     {
       "id": "8",
       "name": "Handover",
       "name_ar": "التسليم",
       "duration": "1",
-      "predecessors": "6,7"
+      "predecessors": "6,7",
+      "optimistic": "0.5",
+      "mostLikely": "1",
+      "pessimistic": "1.5",
+      "normalCost": "1200",
+      "resource": "2"
     }
   ]
 }

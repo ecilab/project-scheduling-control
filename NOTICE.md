@@ -18,4 +18,6 @@ The application loads the following fonts from Google Fonts at runtime. They are
 No third-party JavaScript libraries are used. All charts, diagrams and icons are drawn in SVG inside `index.html`.
 
 ## Privacy
-The application runs entirely in the browser. It sends no project data anywhere; projects, the theme and the language choice are stored only in the visitor's own browser (localStorage).
+The application runs entirely in the browser. By default it sends no project data anywhere; projects, the theme and the language choice are stored only in the visitor's own browser (localStorage).
+
+The optional AI assistant is off by default. When a user turns it on and enters their own API key, the project data and the user's questions are sent to the provider they choose (Anthropic or OpenAI) under that provider's terms, and usage is billed to the user's key. The key is sent only to that provider. It is kept in sessionStorage (forgotten when the tab closes) unless the user chooses to remember it on the device (localStorage).
