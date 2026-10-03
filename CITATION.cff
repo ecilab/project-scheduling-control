@@ -10,7 +10,7 @@ authors:
 version: 1.1.0
 date-released: 2026-09-29
 url: "https://ecilab.github.io/cpm-analyzer/"
-repository-code: "https://github.com/ecilab/cpm-analyzer"
+repository-code: "https://github.com/ecilab/project-scheduling-control"
 license: MIT
 keywords:
   - critical path method
