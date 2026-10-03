@@ -4,7 +4,7 @@
 
 An interactive, bilingual (English / Arabic) web tool for learning and applying the **Critical Path Method (CPM)**. Enter activities, durations and predecessors; the tool calculates the full schedule, finds every critical path and explains the result.
 
-**Live demo:** https://ecilab.github.io/cpm-analyzer/
+**Live demo:** https://ecilab.github.io/project-scheduling-control/
 
 ![Header and KPI cards](assets/screenshots/overview.png)
 
