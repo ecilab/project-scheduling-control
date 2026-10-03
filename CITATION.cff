@@ -9,7 +9,7 @@ authors:
     affiliation: "ECI Lab (Engineering Creativity & Innovation Lab)"
 version: 1.1.0
 date-released: 2026-09-29
-url: "https://ecilab.github.io/cpm-analyzer/"
+url: "https://ecilab.github.io/project-scheduling-control/"
 repository-code: "https://github.com/ecilab/project-scheduling-control"
 license: MIT
 keywords:
